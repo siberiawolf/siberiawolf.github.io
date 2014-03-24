@@ -7,5 +7,5 @@ permalink: /:title
 
 title: siberiawolf
 url: http://siberiawolf.github.io
-feed: /atom.xml
+feed: /atom.xml  
 author_info: <a href="http://siberiawolf.github.io/">siberiawolf</a>
