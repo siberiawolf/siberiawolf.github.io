@@ -1,12 +1,10 @@
-#一点点说明
+# 说明
 
-这是[BeiYuu.com](http://beiyuu.com)的源码，如果你看了[使用Github Pages建独立博客](http://beiyuu.com/github-pages/)，希望看下去哦：
+我的网站是：[siberiawolf](http://siberiawolf.github.io/)。
 
-* 马上动手，很赞
-* 感谢认可
+本站使用的是[BeiYuu.com](http://beiyuu.com)的源码。我只做了部分修改。
+如果你也想使用Github Pages，请看[使用Github Pages建独立博客](http://beiyuu.com/github-pages/)
+
 * 推荐阅读：[我为什么写博客？](http://beiyuu.com/why-blog/)
-* 想复用我的设计，没问题，标个出处就好啦
-* 转载也没问题，标个出处呗少年
-* 恩，认真的童鞋最可爱啦~
 
-###请删掉统计代码哦 /_layouts/default.html L38-41
+
