@@ -5,7 +5,7 @@ pygments: true
 paginate: 8
 permalink: /:title
 
-title: siberiawolf
+title: Siberiawolf
 url: http://siberiawolf.github.io
 feed: /atom.xml  
 author_info: <a href="http://siberiawolf.github.io/">siberiawolf</a>
