@@ -13,9 +13,12 @@ layout: home
         <div class="cate-bar"><span id="cateBar"></span></div>
 
         <ul class="artical-list">
-        {{site.categories.CATEGORY}}
-        {{site.categories.project}}
-        {{site.categories}}
+        {% for post in site.categories.CATEGORY %}  
+            CATEGORY --> {{post}}
+        {% endfor %}
+        {% for post in site.posts %}
+            posts-->{{ post }}
+        {% endfor %}
         {% for post in site.categories.project %}
             <li>
                 <h2>
