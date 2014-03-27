@@ -1,6 +1,5 @@
 /**
- * Author:           BeiYuu
- * Contact:          beiyuu.com
+ * CSS 文件来自：http://beiyuu.com/
  */
 
 /* 重置浏览器CSS */
@@ -17,7 +16,7 @@ abbr,acronym{border:0;font-variant:normal;}
 del{text-decoration:line-through;}
 address,caption,cite,code,dfn,em,th,var {font-style:normal;font-weight:500;}
 ol,ul {list-style:none;}
-caption,th{text-align:left;}
+caption,th{text-align:lefft;}
 h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500;}
 q:before,q:after {content:'';}
 sup{vertical-align:text-top;}
@@ -84,13 +83,13 @@ pre ol{margin-left:25px;list-style-type:decimal;}
     background-position:50% 50%;
 }
 .blog .aside{
-    background-image:url(https://d233eq3e3p3cv0.cloudfront.net/max/1000/0*cF2i1ZosSP_UTJig.jpeg);
+    background-image:url("/images/index/eiffeltower.jpg");
 }
 .opinion .aside{
-    background-image:url(https://dnqgz544uhbo8.cloudfront.net/_/fp/img/bestof/june-2013.CaUUbO2jIECgCmldhmxCCA.jpg);
+    background-image:url("/images/index/gradually.jpg");
 }
 .project .aside{
-    background-image:url('https://d233eq3e3p3cv0.cloudfront.net/max/1000/0*kTUZamBulGQZg1MW.jpeg')
+    background-image:url('/images/index/smoke.jpg')
 }
 .index-content .section { margin-left:30%; padding-top:80px; padding-right:15%; ;}
 
