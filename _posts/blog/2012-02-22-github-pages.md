@@ -82,7 +82,7 @@ Git是版本管理的未来，他的优点我不再赘述，相关资料很多�
     Enter same passphrase again:<再次输入加密串>
 
 最后看到这样的界面，就成功设置ssh key了：
-![ssh key success](/images/githubpages/ssh-key-set.png)
+![ssh key success](http://siberiawolf.qiniudn.com/images/githubpages/ssh-key-set.png)
 
 ###4、添加SSH Key到GitHub：
 在本机设置SSH Key之后，需要添加到GitHub上，以完成SSH链接的设置。
@@ -90,10 +90,10 @@ Git是版本管理的未来，他的优点我不再赘述，相关资料很多�
 用文本编辑工具打开id_rsa.pub文件，如果看不到这个文件，你需要设置显示隐藏文件。准确的复制这个文件的内容，才能保证设置的成功。
 
 在GitHub的主页上点击设置按钮：
-![github account setting](/images/githubpages/github-account-setting.png)
+![github account setting](http://siberiawolf.qiniudn.com/images/githubpages/github-account-setting.png)
 
 选择SSH Keys项，把复制的内容粘贴进去，然后点击Add Key按钮即可：
-![set ssh keys](/images/githubpages/bootcamp_1_ssh.jpg)
+![set ssh keys](http://siberiawolf.qiniudn.com/images/githubpages/bootcamp_1_ssh.jpg)
 
 PS：如果需要配置多个GitHub账号，可以参看这个[多个github帐号的SSH key切换](http://omiga.org/blog/archives/2269)，不过需要提醒一下的是，如果你只是通过这篇文章中所述配置了Host，那么你多个账号下面的提交用户会是一个人，所以需要通过命令`git config --global --unset user.email`删除用户账户设置，在每一个repo下面使用`git config --local user.email '你的github邮箱@mail.com'` 命令单独设置用户账户信息
 
@@ -129,7 +129,7 @@ Git会根据用户的名字和邮箱来记录提交。GitHub也是用这些信�
 有些工具没有通过SSH来链接GitHub。如果要使用这类工具，你需要找到然后设置你的API Token。
 
 在GitHub上，你可以点击*Account Setting > Account Admin*：
-![set ssh keys](/images/githubpages/bootcamp_1_token.jpg)
+![set ssh keys](http://siberiawolf.qiniudn.com/images/githubpages/bootcamp_1_token.jpg)
 
 然后在你的命令行中，输入下面的命令，把token添加进去：
 
@@ -146,9 +146,9 @@ Git会根据用户的名字和邮箱来记录提交。GitHub也是用这些信�
 
 ###User & Organization Pages
 想建立个人博客是用的第一种，形如`beiyuu.github.io`这样的可访问的站，每个用户名下面只能建立一个，创建之后点击`Admin`进入项目管理，可以看到是这样的：
-![user pages](/images/githubpages/user-pages.png)
+![user pages](http://siberiawolf.qiniudn.com/images/githubpages/user-pages.png)
 而普通的项目是这样的，即使你也是用的`othername.github.io`：
-![other pages](/images/githubpages/other-pages.png)
+![other pages](http://siberiawolf.qiniudn.com/images/githubpages/other-pages.png)
 
 创建好`username.github.io`项目之后，提交一个`index.html`文件，然后`push`到GitHub的`master`分支（也就是普通意义上的主干）。第一次页面生效需要一些时间，大概10分钟左右。
 
@@ -260,7 +260,7 @@ Jekyll的配置写在_config.yml文件中，可配置项有很多，我们不去
 现在专做评论模块的产品有很多，比如[Disqus][]，还有国产的[多说][]，Disqus对现在各种系统的支持都比较全面，到写博客为止，多说现在仅是WordPress的一个插件，所以我这里暂时也使用不了，多说与国内的社交网络紧密结合，还是有很多亮点的，值得期待一下。我先选择了Disqus。
 
 注册账号什么的就不提了，Disqus支持很多的博客平台，参见下图：
-![Disqus sites](/images/githubpages/disqus-site.jpg)
+![Disqus sites](http://siberiawolf.qiniudn.com/images/githubpages/disqus-site.jpg)
 
 我们选择最下面的`Universal Code`就好，然后会看到一个介绍页面，把下面这段代码复制到你的模板里面，可以只复制到显示文章的模板中：
 
