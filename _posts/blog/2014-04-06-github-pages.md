@@ -209,7 +209,7 @@ google找到到stackoverflow中的一篇[问答](http://stackoverflow.com/questi
 在Jekyll new myblog的时候，在_post目录下生成的文件中，找到如下代码，然后删除掉。
 
 **最后成功启动Jekyll 的界面如下**：
-![Jekyll ok](/images/githubpages/jekyll-ok.jpg)
+![Jekyll ok](http://siberiawolf.qiniudn.com/images/githubpages/jekyll-ok.jpg)
 
 ####5.代码高亮
 【错误7】Conversion error: There was an error converting..  
@@ -222,11 +222,11 @@ google找到到stackoverflow中的一篇[问答](http://stackoverflow.com/questi
     ERROR: YOUR SITE COULD NOT BE BUILT:------------------------------------Missing dependency: rdiscount
 
 根据提示，我执行命令`$ gem install rdiscount`，但是我这里一直安装不上。
-![jekyll-makdown-rdiscount](/images/githubpages/jekyll-makdown-rdiscount.jpg)
+![jekyll-makdown-rdiscount](http://siberiawolf.qiniudn.com/images/githubpages/jekyll-makdown-rdiscount.jpg)
 
 偶然间，我修改了一下**控制面板**中的**区域语言**中的格式修改为**英语（美国）**，然后在执行`$ gem install rdiscount`，居然成功了。
-![jekyll-language](/images/githubpages/jekyll-language.jpg)
-![jekyll-gem-suc](/images/githubpages/jekyll-gem-suc.jpg)
+![jekyll-language](http://siberiawolf.qiniudn.com/images/githubpages/jekyll-language.jpg)
+![jekyll-gem-suc](http://siberiawolf.qiniudn.com/images/githubpages/jekyll-gem-suc.jpg)
 
 提示gem安装成功。然后代码也就高亮了。而且也不会出现那个Conversion error了。
 
