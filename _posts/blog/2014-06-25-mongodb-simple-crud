@@ -1,3 +1,10 @@
+---
+layout: post
+title: mongodb简单CRUD
+description: 如何启动mongodb、通过mongodb进行简单CRUD操作
+category: blog
+---
+
 #启动#
 ##创建db文件夹##
 启动之前，我们要给mongodb指定一个文件夹，这里取名为”db",用来存放mongodb的数据。
