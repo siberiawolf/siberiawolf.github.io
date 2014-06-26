@@ -5,7 +5,6 @@ description: 如何启动mongodb、通过mongodb进行简单CRUD操作
 category: blog
 ---
 
-#启动#
 ##创建db文件夹##
 启动之前，我们要给mongodb指定一个文件夹，这里取名为”db",用来存放mongodb的数据。
 我本地目录：
@@ -24,6 +23,7 @@ category: blog
 
 ##测试##
 通过通过控制台可以看到本地端口：27017
+
 **启动信息**
 
 	MongoDB starting : pid=2748 port=27017 dbpath=d:\ProgramFiles\mongodb\db 64-bit host=wolf-PC
