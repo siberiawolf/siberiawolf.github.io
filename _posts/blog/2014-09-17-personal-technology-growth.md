@@ -27,9 +27,8 @@ category: blog
   * [网站收集](#网站收集)
   * [GitHub收集](#GitHub收集)
 
-----
 
-## 语言无关类
+## 一、语言无关类
 * 开发工具
     * [FindAndRunRobot --> windows程序快速查找](http://www.donationcoder.com/Software/Mouser/findrun/)
 * 编辑器
@@ -47,10 +46,9 @@ category: blog
 * 制作博客
     * [typecho --> 轻量级博客程序](http://typecho.org/)
 
-### web
+### web开发
 * web开发工具
     * [GoodSync](http://www.goodsync.com/)一款用来同步的软件。这里我主要用来同步svn代码到虚拟机、drupal中
-
 * 调试工具
     * [freeformatter 在格式化html、js、json](http://www.freeformatter.com/)
     * [jsfiddle 在线调试js、html、css](http://jsfiddle.net/)
@@ -59,9 +57,7 @@ category: blog
     * [Chrome Workspace](http://icewater.me/?p=862)
     * [F5刷新](http://getf5.com/)
 
-### 操作系统
-
-## 语言相关类
+## 二、语言相关类
 
 ### JavaScript
 * JavaScript
@@ -98,7 +94,7 @@ category: blog
 * [维基百科](http://zh.wikipedia.org/wiki/Markdown)
 * [Markdown 在线编辑](http://markable.in/editor/)
 
-## 读书笔记及其他
+## 三、读书笔记及其他
 
 ### 读书笔记
 * [读书笔记](http://www.write.org.cn/)
@@ -117,15 +113,12 @@ category: blog
     * [这个网站用的是一个MP4，类似第一个](http://www.domanistudios.com/#/careers)
 * 好玩儿的素材
     * [原生js仿腾讯微博发布信息和删除信息功能](http://www.17sucai.com/pins/3556.html)
-
 * node.js 聊天
     * [@yanyan聊天工具](在2.21共享中)
 
 ### 博客收集
 * [Joyqi的堆空间](http://70.io/)
 * [前端乱炖 --> 用nodeJs建的网站](http://www.html-js.com/)
-
-### 网站收集
 
 ### GitHub收集
 * [前端资源的收集](https://github.com/airyland/Jsource)
