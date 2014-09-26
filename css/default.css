@@ -83,13 +83,13 @@ pre ol{margin-left:25px;list-style-type:decimal;}
     background-position:50% 50%;
 }
 .blog .aside{
-    background-image:url(http://siberiawolf.qiniudn.com/images/index/eiffeltower.jpg);
+    background-image:url(http://siberiawolf.qiniudn.com/images%2Findex%2Feiffeltower.jpg);
 }
 .opinion .aside{
-    background-image:url(http://siberiawolf.qiniudn.com/images/index/gradually.jpg);
+    background-image:url(http://siberiawolf.qiniudn.com/images%2Findex%2Fgradually.jpg);
 }
 .project .aside{
-    background-image:url(http://siberiawolf.qiniudn.com/images/index/smoke.jpg)
+    background-image:url(http://siberiawolf.qiniudn.com/images%2Findex%2Fsmoke.jpg)
 }
 .index-content .section { margin-left:30%; padding-top:80px; padding-right:15%; ;}
 
