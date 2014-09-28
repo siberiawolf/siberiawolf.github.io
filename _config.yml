@@ -1,8 +1,7 @@
-auto: true
 
 markdown: rdiscount
-pygments: true
-paginate: 8
+highlighter: pygments
+
 permalink: /:title
 
 title: Siberiawolf

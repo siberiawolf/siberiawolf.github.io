@@ -7,7 +7,7 @@ layout:           default
 <script src="http://siberiawolf.qiniudn.com/js/post.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(function(){
-        function animateBar($item,noAni){
+        function animateBar($item,noAni){       // 首页三个导航
             var spanLeft = $item.find('span').offset().left;
             var conLeft = $item.parent().offset().left;
             var left = spanLeft - conLeft;
@@ -47,4 +47,3 @@ layout:           default
         animateBar($('.artical-cate .on'),true);
     });
 </script>
-

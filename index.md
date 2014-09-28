@@ -26,10 +26,3 @@ layout: home
     <div class="aside">
     </div>
 </div>
-
-<!-- 百度统计代码 start -->
-<script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F1248d51f06841e8dda82405c280d6597' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<!-- 百度统计代码 end -->
