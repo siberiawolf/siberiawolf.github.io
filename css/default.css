@@ -139,8 +139,12 @@ h3.about {color:#777;margin-top:20px;font-size:22px;margin-bottom:10px}
 .home-menu-icon:hover,
 .home-follow:hover { color:#fff; text-decoration:none; }
 .home-contact { color:#fff; margin-top:2px; background:#000; padding:8px 0 7px; text-align:center; display:none;}
-.home-contact a { width:30px; display:inline-block; }
-.home-contact img { width:18px; }
+.home-contact a { width:30px; display:inline-block; margin: 0 2px; }
+.home-contact div { background: url(/images/2.png); width: 30px; background-size: 124px; }
+.home-contact .github { height: 24px; background-position: 0px 0px; }
+.home-contact .weibo { height: 23px;background-position: -32px 0px; }
+.home-contact .segmentfault { height:24px;background-position: -63px 0px; }
+.home-contact .facebook { height:24px;background-position: -94px 0px; }
 
 @media screen and (max-width: 750px){
     body {font-size:14px;}
