@@ -4,7 +4,7 @@ highlighter: pygments
 
 permalink: /:title
 
-title: Siberiawolf
+title: Siberiawolf的小窝
 url: http://siberiawolf.github.io
 feed: /atom.xml  
 author_info: <a href="http://siberiawolf.github.io/">siberiawolf</a>
