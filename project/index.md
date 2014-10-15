@@ -17,7 +17,7 @@ layout: home
                 <h2>
                     <a href="/free_programming/index.html">免费的编程中文书籍索引</a>
                 </h2>
-                <div class="title-desc">免费的编程中文书籍索引</div>
+                <div class="title-desc">免费的编程中文书籍索引，欢迎投稿</div>
             </li>
         </ul>
     </div>
