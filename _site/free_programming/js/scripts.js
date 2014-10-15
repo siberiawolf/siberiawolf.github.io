@@ -15,7 +15,6 @@ $(document).ready(function(){
   	offset: navHeight
   });
 
-
   /* smooth scrolling sections */
   $('a[href*=#]:not([href=#])').click(function() {
       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -29,6 +28,17 @@ $(document).ready(function(){
         }
       }
   });
+
+  $('.home-follow').click(function(e){        // 左侧悬浮点击      
+    e.preventDefault();
+
+    if($('.home-contact').is(':visible')){
+        $('.home-contact').hide();
+    }else{
+        $('.home-contact').show();
+    }
+  });
+  
 });
 
 function toggleDuoshuoComments(container, id, url){

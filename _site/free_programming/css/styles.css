@@ -1,17 +1,13 @@
 /*
-A Bootstrap 3.1 affix sidebar template
-from http://bootply.com
-
-This CSS code should follow the 'bootstrap.css'
-in your HTML file.
-
-license: MIT
-author: bootply.com
+from http://siberiawolf.com
+author: siberiawolf
 */
 
 body {
  padding-top:50px;
 }
+.navbar-default{z-index: 1;}
+.navbar-default .container{padding-left: 40px;}
 
 #masthead { 
  min-height:250px;
@@ -45,8 +41,8 @@ body {
 @media (min-width: 979px) {
   #sidebar.affix-top {
     position: static;
-  	margin-top:30px;
-  	width:228px;
+    margin-top:30px;
+    width:228px;
   }
   
   #sidebar.affix {
@@ -67,3 +63,23 @@ body {
 
 #disqus_container {text-align: center;}
 #disqus_container a{color: red;font-size: 20px;}
+
+.home-menu { position:fixed; left:15px; top: 5px; z-index: 2; /* font-size: 18px; */ }
+.home-menu-icon { line-height:38px; padding:0 8px; display:inline-block; color:#fff; font-size:18px;  background:#000; }
+.home-follow { margin-left:2px; line-height:38px; padding:0 8px; display:inline-block; color:#fff; font-size:18px; background:#000;  }
+.home-menu-icon:hover,
+.home-follow:hover { color:#fff; text-decoration:none; }
+.home-contact { color:#fff; margin-top:2px; background: #fff; padding: 8px 0px 8px 4px; text-align:center; display:none;}
+.home-contact a { width: 26px; display:inline-block; margin: 0 2px; }
+.home-contact div { background: url(/images/nav_bg.png); width: 20px;  height: 20px; background-size: auto 20px; border-radius: 2px;}
+.home-contact .github { background-color: #333; background-position: -20px 0; }
+.home-contact .weibo { background-color: #E90D24; background-position: -40px 0; }
+.home-contact .twitter { background-color: #50ABF1;  background-position: -80px 0; }
+.home-contact .facebook { background-color: #4862A3;  background-position: -100px 0; }
+
+@media (max-width: 1020px){
+    .home-menu { position:absolute; }
+}
+@media (max-width: 1300px){
+    .home-menu { position:absolute; }
+}
