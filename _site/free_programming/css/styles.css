@@ -64,3 +64,6 @@ body {
 .task-list{
   font-size: 18px;
 }
+
+#disqus_container {text-align: center;}
+#disqus_container a{color: red;font-size: 20px;}

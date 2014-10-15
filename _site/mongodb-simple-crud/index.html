@@ -146,13 +146,10 @@ WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 
 <p>其中_id是mongodb默认添加的唯一标识</p>
 
-        <!-- <div id="disqus_container">
-            <div style="margin-bottom:20px" class="right">
-            </div>
-            <a href="#" class="comment" onclick="return false;">点击查看评论</a>
-            <div id="disqus_thread"></div>
-        </div> -->
-        <div class="ds-thread" data-thread-key="mongodb简单CRUD" data-title="mongodb简单CRUD" data-url="http://siberiawolf.com//mongodb-simple-crud"></div>
+        <div id="disqus_container">
+            <a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', 'mongodb简单CRUD', 'http://siberiawolf.com//mongodb-simple-crud');">点击查看评论</a>
+            <div id="comment-box"></div>
+        </div>        
     </div>
 
     <div class="sidenav">
@@ -192,16 +189,20 @@ WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 </div>
 <script src="http://libs.baidu.com/jquery/1.7.1/jquery.min.js"></script>
 <!-- 多说公共JS代码 start -->
+<script>var duoshuoQuery = {short_name:"siberiawolf"};</script>
+<script src="http://static.duoshuo.com/embed.js"></script>
 <script type="text/javascript">
-var duoshuoQuery = {short_name:"siberiawolf"};
-    (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0] 
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
+function toggleDuoshuoComments(container, id, url){
+  if(jQuery(container).has("div").length>0){
+    jQuery(container).empty();
+    return;
+  }
+  var el = document.createElement('div');
+  el.setAttribute('data-thread-key', id);
+  el.setAttribute('data-url', url);
+  DUOSHUO.EmbedThread(el);
+  jQuery(container).append(el);
+}
 </script>
 <!-- 多说公共JS代码 end -->
 

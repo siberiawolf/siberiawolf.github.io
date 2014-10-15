@@ -117,7 +117,8 @@ pre ol{margin-left:25px;list-style-type:decimal;}
 .wiki ul ul{list-style:circle;margin-top:10px;margin-bottom:10px;}
 
 /***************contact style*************/
-#disqus_container {font-size:12px;}
+#disqus_container {text-align: center;}
+#disqus_container a{color: red;}
 #disqus_container a.comment{font-size:14px;}
 h3.about {color:#777;margin-top:20px;font-size:22px;margin-bottom:10px}
 .about-link a {margin-right:10px;font-weight:bold;font-style:italic;font-size:13px;color:#E50053}
