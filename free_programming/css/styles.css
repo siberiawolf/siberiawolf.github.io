@@ -78,6 +78,6 @@ body {
 .home-contact .facebook { background-color: #4862A3;  background-position: -100px 0; }
 
 @media (max-width: 992px){
-    #masthead{margin-top: 80px;}
+    #masthead{margin-top: 40px;}
     .home-follow{display: none;}
 }
