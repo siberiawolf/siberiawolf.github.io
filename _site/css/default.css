@@ -137,7 +137,8 @@ h3.about {color:#777;margin-top:20px;font-size:22px;margin-bottom:10px}
 .home-menu { position:fixed; top:15px; left:15px; z-index:5; font-size:0; }
 .home-menu-icon { line-height:38px; padding:0 8px; display:inline-block; color:#fff; font-size:18px;  background:#000; }
 .home-follow { margin-left:2px; line-height:38px; padding:0 8px; display:inline-block; color:#fff; font-size:18px; background:#000;  }
-.home-menu-icon:hover,
+.home-menu-icon:hover{ color:#fff; text-decoration:none; }
+.home-menu-icon:active{ color:#fff; text-decoration:none; }
 .home-follow:hover { color:#fff; text-decoration:none; }
 .home-contact { color:#fff; margin-top:2px; background: #fff; padding: 8px 0px 8px 8px; text-align:center; display:none;}
 .home-contact a { width:30px; display:inline-block; margin: 0 2px; }
