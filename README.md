@@ -9,4 +9,8 @@
 * [我为什么写博客](http://beiyuu.com/why-blog)
 * [免费的编程中文书籍索引](http://siberiawolf.com/free_programming/index.html)
 
+## 说明
+[免费的编程中文书籍索引](http://siberiawolf.com/free_programming/index.html)整理自
+[justjavac](https://github.com/justjavac/free-programming-books-zh_CN)，内容上照搬原处，只是用[Bootstrap](http://getbootstrap.com/)重新显示了一遍而已。
+[查看源代码](https://github.com/siberiawolf/siberiawolf.github.io/tree/master/free_programming)
 
