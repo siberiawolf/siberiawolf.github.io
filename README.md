@@ -1,5 +1,3 @@
-# 说明
-
 我的网站是：[siberiawolf](http://siberiawolf.com)。
 
 本站使用的是[BeiYuu.com](http://beiyuu.com)的源码，我做了部分修改和一些优化。
