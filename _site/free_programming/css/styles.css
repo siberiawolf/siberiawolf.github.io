@@ -67,7 +67,9 @@ body {
 .home-menu { z-index: 2; width: 138px; margin-top: 6px; }
 .home-menu-icon { line-height:38px; padding:0 8px; display:inline-block; color:#fff; font-size:18px;  background:#000; }
 .home-follow { margin-left:2px; line-height:38px; padding:0 8px; display:inline-block; color:#fff; font-size:18px; background:#000;  }
-.home-menu-icon:hover,.home-follow:hover { color:#fff; text-decoration:none; }
+.home-menu-icon:hover { color:#fff; text-decoration:none; }
+.home-menu-icon:active { color:#fff; text-decoration:none; }
+.home-follow:hover { color:#fff; text-decoration:none; }
 .home-contact { color:#fff; margin-top:2px; background: #fff; padding: 8px 0px 8px 4px; text-align:center; display:none;}
 .home-contact a { width: 26px; display:inline-block; margin: 0 2px; }
 .home-contact div { background: url(/images/nav_bg.png); width: 20px;  height: 20px; background-size: auto 20px; border-radius: 2px;}
