@@ -79,7 +79,5 @@ body {
 
 @media (max-width: 992px){
     #masthead{margin-top: 80px;}
-}
-@media (max-width: 400){
     .home-follow{display: none;}
 }
