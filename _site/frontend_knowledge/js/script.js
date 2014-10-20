@@ -540,3 +540,15 @@ function init(){
     //end
     ht.controller.onComplete();
 }
+
+function toggleDuoshuoComments(container, id, url){
+  if(jQuery(container).has("div").length>0){
+    jQuery(container).empty();
+    return;
+  }
+  var el = document.createElement('div');
+  el.setAttribute('data-thread-key', id);
+  el.setAttribute('data-url', url);
+  DUOSHUO.EmbedThread(el);
+  jQuery(container).append(el);
+}

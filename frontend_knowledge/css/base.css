@@ -25,6 +25,7 @@ h4 {
 
 a {
     color:#23A4FF;
+    text-decoration: none;
 }
 
 #container {
@@ -120,4 +121,12 @@ a {
     font-size:10px;
     font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;
     padding:7px;
+}
+
+#disqus_container{
+    margin-top: 20px;
+}
+#disqus_container a{
+    font-size: 22px;
+    color: red;
 }
