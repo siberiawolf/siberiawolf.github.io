@@ -83,49 +83,66 @@
 	<div class="row">
       <!--left-->
       <div class="col-md-3" id="leftCol">
-        <ul class="nav nav-stacked">
-      		<li><a href="#操作系统">操作系统</a></li>
-          <li><a href="#WEB服务器">WEB服务器</a></li>
-          <li><a href="#版本控制">版本控制</a></li>
-          <li><a href="#NoSQL">NoSQL</a></li>
-          <li><a href="#MySQL">MySQL</a></li>
-          <li><a href="#项目相关">项目相关</a></li>
-          <li><a href="#Web">Web</a></li>
-          <li><a href="#大数据">大数据</a></li>
-          <li><a href="#编程艺术">编程艺术</a></li> 
-				  <li><a href="#AWK">AWK</a></li>
-				  <li><a href="#C++">C/C++</a></li>
-				  <li><a href="#CSS">CSS/HTML</a></li>
-				  <li><a href="#Dart">Dart</a></li>
-				  <li><a href="#Fortran">Fortran</a></li>
-				  <li><a href="#Java">Java</a></li>
-				  <li><a href="#JavaScript">JavaScript</a></li>
-				  <li><a href="#PHP">PHP</a></li>
-				  <li><a href="#iOS">iOS</a></li>
-				  <li><a href="#Android">Android</a></li>
-				  <li><a href="#Python">Python</a></li>
-				  <li><a href="#Prolog">Prolog</a></li>
-				  <li><a href="#Ruby">Ruby</a></li>
-				  <li><a href="#Shell">Shell</a></li>
-				  <li><a href="#Go">Go</a></li>
-				  <li><a href="#Groovy">Groovy</a></li>
-				  <li><a href="#LaTeX">LaTeX</a></li>
-				  <li><a href="#LISP">LISP</a></li>
-				  <li><a href="#Lua">Lua</a></li>
-				  <li><a href="#Haskell">Haskell</a></li>
-				  <li><a href="#R">R</a></li>
-				  <li><a href="#Scala">Scala</a></li>
-				  <li><a href="#Swift">Swift</a></li>
-				  <li><a href="#Perl">Perl</a></li>
-				  <li><a href="#Prolog">Prolog</a></li>
-				  <li><a href="#Vimscript">Vimscript</a></li>
-	      	<li><a href="#读书笔记及其它">读书笔记及其它</a></li>
+        <ul class="nav nav-stacked" id="sidebar">        	
+          <li class="active">
+          	<a href="#no_language_ref">语言无关类</a>
+						<ul class="nav">
+					    <li><a href="#system">操作系统</a></li>
+		          <li><a href="#webserve">WEB服务器</a></li>
+		          <li><a href="#version_control">版本控制</a></li>
+		          <li><a href="#nosql">NoSQL</a></li>
+		          <li><a href="#mysql">MySQL</a></li>
+		          <li><a href="#project">项目相关</a></li>
+		          <li><a href="#web">Web</a></li>
+		          <li><a href="#big_data">大数据</a></li>
+		          <li><a href="#program_art">编程艺术</a></li> 
+					  </ul>
+          </li>
+          <li>
+          	<a href="#language_ref">语言相关类</a>
+						<ul class="nav">
+					    <li><a href="#AWK">AWK</a></li>
+						  <li><a href="#CC">C/C++</a></li>
+						  <li><a href="#CSS">CSS/HTML</a></li>
+						  <li><a href="#Dart">Dart</a></li>
+						  <li><a href="#Fortran">Fortran</a></li>
+						  <li><a href="#Java">Java</a></li>
+						  <li><a href="#JavaScript">JavaScript</a></li>
+						  <li><a href="#PHP">PHP</a></li>
+						  <li><a href="#iOS">iOS</a></li>
+						  <li><a href="#Android">Android</a></li>
+						  <li><a href="#Python">Python</a></li>
+						  <li><a href="#Ruby">Ruby</a></li>
+						  <li><a href="#Shell">Shell</a></li>
+						  <li><a href="#Go">Go</a></li>
+						  <li><a href="#Groovy">Groovy</a></li>
+						  <li><a href="#LaTeX">LaTeX</a></li>
+						  <li><a href="#LISP">LISP</a></li>
+						  <li><a href="#Lua">Lua</a></li>
+						  <li><a href="#Haskell">Haskell</a></li>
+						  <li><a href="#R">R</a></li>
+						  <li><a href="#Scala">Scala</a></li>
+						  <li><a href="#Swift">Swift</a></li>
+						  <li><a href="#Perl">Perl</a></li>
+						  <li><a href="#Prolog">Prolog</a></li>
+						  <li><a href="#Vimscript">Vimscript</a></li>
+					  </ul>
+          </li>
+          <li>
+          	<a href="#book_others">读书笔记及其它</a>
+          	<ul class="nav">
+					    <li><a href="#readbook">读书笔记</a></li>
+						  <li><a href="#test">测试相关</a></li>
+						</ul>
+          </li>
         </ul>        
       </div><!--/left-->
       
       <!--right-->
       <div class="col-md-9">
-        <h2 id="操作系统">操作系统</h2>
+     	 	<h1 id="no_language_ref">语言无关类</h1>
+
+        <h2 id="system">操作系统</h2>
         <ul class="task-list">
 				  <li><a href="http://i.linuxtoy.org/docs/guide/index.html">开源世界旅行手册</a></li>
 				  <li><a href="http://vbird.dic.ksu.edu.tw/">鸟哥的Linux私房菜</a> (简体)</li>
@@ -144,12 +161,12 @@
 				  <li><a href="https://github.com/gmszone/designiot">一步步搭建物联网系统</a></li>
 				</ul>
 
-        <h2 id="WEB服务器">WEB服务器</h2>
+        <h2 id="webserve">web服务器</h2>
         <ul class="task-list">
 				  <li><a href="http://tengine.taobao.org/book/index.html">Nginx开发从入门到精通</a> (淘宝团队出品)</li>
 				</ul>       
 
-        <h2 id="版本控制">版本控制</h2>
+        <h2 id="version_control">版本控制</h2>
         <ul class="task-list">
 				  <li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">Git教程</a> （本文由 <a href="http://weibo.com/liaoxuefeng">@廖雪峰</a> 创作，如果觉得本教程对您有帮助，可以去 <a href="https://itunes.apple.com/cn/app/git-jiao-cheng/id876420437">iTunes</a> 购买）</li>
 				  <li><a href="http://rogerdudler.github.io/git-guide/index.zh.html">git - 简易指南</a></li>
@@ -164,7 +181,7 @@
 				  <li><a href="https://github.com/ArslanBilal/Git-Cheat-Sheet">Git-Cheat-Sheet</a> （感谢 @ArslanBilal 翻译了中文版）</li>
 				</ul>
         
-        <h2 id="NoSQL">NoSQL</h2>
+        <h2 id="nosql">NoSQL</h2>
         <ul class="task-list">
 				  <li><a href="http://www.yankay.com/wp-content/NoSql_Database_Note.html">NoSQL数据库笔谈</a> (<a href="http://yankaycom-wordpress.stor.sinaapp.com/uploads/2012/12/NoSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%B0%88v2.pdf">PDF</a>)</li>
 				  <li><a href="http://www.redisbook.com/en/latest/">Redis 设计与实现</a></li>
@@ -177,12 +194,12 @@
 				  <li><a href="http://neo4j.tw/">Neo4j .rb 中文資源</a></li>
 				</ul>
 
-        <h2 id="MySQL">MySQL</h2>
+        <h2 id="mysql">MySQL</h2>
         <ul class="task-list">
 				  <li><a href="http://www.cnblogs.com/leoo2sk/archive/2011/07/10/mysql-index.html">MySQL索引背后的数据结构及算法原理</a></li>
 				</ul>
 
-        <h2 id="项目相关">项目相关</h2>
+        <h2 id="project">项目相关</h2>
         <ul class="task-list">
 				  <li><a href="http://article.yeeyan.org/view/2251/94882">持续集成（第二版）</a> (译言网)</li>
 				  <li><a href="http://www.ibm.com/developerworks/cn/java/j-ap/">让开发自动化系列专栏</a></li>
@@ -192,7 +209,7 @@
 				  <li><a href="http://local.joelonsoftware.com/wiki/%E9%A6%96%E9%A0%81">約耳談軟體(Joel on Software)</a></li>
 				</ul>
 
-        <h2 id="Web">Web</h2>
+        <h2 id="web">Web</h2>
         <ul class="task-list">
 				  <li><a href="http://www.20thingsilearned.com/zh-CN/home">关于浏览器和网络的 20 项须知</a></li>
 				  <li><a href="http://knowledge.ecomfe.com/">前端知识体系</a></li>
@@ -207,24 +224,26 @@
 				  <li><a href="https://github.com/bolasblack/http-api-guide">HTTP 接口设计指北</a></li>
 				</ul>
 
-        <h2 id="大数据">大数据</h2>
+        <h2 id="big_data">大数据</h2>
         <ul class="task-list">
 				  <li><a href="https://github.com/Flowerowl/Big-Data-Resources">大数据/数据挖掘/推荐系统/机器学习相关资源</a></li>
 				</ul>
 
-        <h2 id="编程艺术">编程艺术</h2>
+        <h2 id="program_art">编程艺术</h2>
         <ul class="task-list">
 				  <li><a href="https://github.com/julycoding/The-Art-Of-Programming-by-July">程序员编程艺术</a></li>
 				  <li><a href="http://www.oschina.net/translate/what-every-programmer-should-know-about-memory-part1?print">每个程序员都应该了解的内存知识(译)</a>【第一部分】</li>
 				  <li><a href="http://read.douban.com/ebook/4972883/">取悦的工序：如何理解游戏</a> (豆瓣阅读，免费书籍)</li>
-				</ul>
+				</ul>	
 
-        <h2 id="AWK">AWK</h2>
+				<h1 id="language_ref">语言相关类</h1>
+
+				<h2 id="AWK">AWK</h2>
         <ul class="task-list">
 				  <li><a href="http://awk.readthedocs.org/en/latest/">awk程序设计语言</a></li>
 				</ul>
 
-        <h2 id="C++">C/C++</h2>
+        <h2 id="CC">C/C++</h2>
         <ul class="task-list">
 				  <li><a href="https://github.com/forhappy/A-Detailed-Cplusplus-Concurrency-Tutorial">C++ 并发编程指南</a> (<a href="http://weibo.com/1702076100">@傅海平ICT</a>)</li>
 				  <li><a href="http://akaedu.github.io/book/">Linux C编程一站式学习</a> (宋劲杉, 北京亚嵌教育研究中心)</li>
@@ -542,9 +561,11 @@
         <ul class="task-list">
 					<li><a href="http://learnvimscriptthehardway.onefloweroneworld.com/">笨方法学Vimscript 中译本</a></li>
 				</ul>
+				      	
+				<h1 id="book_others">读书笔记及其它</h1>
 
-        <h2 id="读书笔记及其它">读书笔记及其它</h2>
-        <ul class="task-list">
+				<h2 id="readbook">读书笔记</h2>
+				<ul class="task-list">
 					<li><a href="https://github.com/fool2fish/dragon-book-exercise-answers">编译原理（紫龙书）中文第2版习题答案</a></li>
 					<li><a href="http://hawstein.com/posts/make-thiner-programming-pearls.html">把《编程珠玑》读薄</a></li>
 					<li><a href="https://github.com/XiaolongJason/ReadingNote/blob/master/Effective%20C%2B%2B/Effective%20C%2B%2B.md">Effective C++读书笔记</a></li>
@@ -557,14 +578,13 @@
 					<li><a href="http://sicp.readthedocs.org/en/latest/">SICP 解题集</a></li>
 				</ul>
 
-        <h2 id="测试相关">测试相关</h2>
+        <h2 id="test">测试相关</h2>
         <ul class="task-list">
 					<li><a href="http://appium.io/slate/cn/v1.2.0/">移动APP自动化测试优秀框架Appium API Reference V1.2.0 CN</a></li>
 				</ul>				
-
+			
 				<div id="disqus_container">
-	        <a href="javascript:void(0);" onclick="toggleDuoshuoComments('#comment-box', '{{ page.title }}', 'http://siberiawolf.com/{{ page.url }}');">点击查看评论</a>
-	        <div id="comment-box"></div>
+	        <div class="ds-thread" data-thread-key="{{ page.title }}" data-title="{{ page.title }}" data-url="http://siberiawolf.com/{{ page.url }}"></div>
 	      </div> 
       </div><!--/right-->
 
@@ -578,8 +598,17 @@
 		<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 		<script src="js/scripts.js"></script>
 		<!-- 多说公共JS代码 start -->
-		<script>var duoshuoQuery = {short_name:"siberiawolf"};</script>
-		<script src="http://static.duoshuo.com/embed.js"></script>
-		<!-- 多说公共JS代码 end -->
+		<script type="text/javascript">
+		var duoshuoQuery = {short_name:"siberiawolf"};
+			(function() {
+				var ds = document.createElement('script');
+				ds.type = 'text/javascript';ds.async = true;
+				ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+				ds.charset = 'UTF-8';
+				(document.getElementsByTagName('head')[0] 
+				 || document.getElementsByTagName('body')[0]).appendChild(ds);
+			})();
+			</script>
+		<!-- 多说公共JS代码 end -->>
 	</body>
 </html>
