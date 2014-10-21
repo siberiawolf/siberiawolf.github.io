@@ -38,17 +38,13 @@ $(document).ready(function(){
         $('.home-contact').show();
     }
   });
+
+  $(document).on('scroll',function(){
+    $(".nav .nav").hide();
+    var $active = $(".nav .active");
+    $active.find(".nav").show();     
+  });
+  
   
 });
 
-function toggleDuoshuoComments(container, id, url){
-  if(jQuery(container).has("div").length>0){
-    jQuery(container).empty();
-    return;
-  }
-  var el = document.createElement('div');
-  el.setAttribute('data-thread-key', id);
-  el.setAttribute('data-url', url);
-  DUOSHUO.EmbedThread(el);
-  jQuery(container).append(el);
-}

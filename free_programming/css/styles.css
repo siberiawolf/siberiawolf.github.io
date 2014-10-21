@@ -6,7 +6,7 @@ author: siberiawolf
 body {
  padding-top:50px;
 }
-.navbar-default{z-index: 1;}
+.navbar-default{z-index: 10;}
 .navbar-default .container{padding-left: 40px;}
 
 #masthead { 
@@ -52,8 +52,8 @@ body {
   }
 }
 
-#sidebar li.active {
-  border:0 #eee solid;
+#sidebar .active .active {
+  border:0 #563d7c solid;
   border-right-width:5px;
 }
 
@@ -61,7 +61,9 @@ body {
   font-size: 18px;
 }
 
-/*.nav .nav{display: none;}*/
+.nav .nav{display: none; padding-left: 20px;}
+.active .active a{color: #563d7c;font-weight: bold;}
+.nav>li>a{padding: 0px;}
 
 #disqus_container {text-align: center;}
 #disqus_container a{color: red;font-size: 20px;}
