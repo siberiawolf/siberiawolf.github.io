@@ -61,6 +61,8 @@ body {
   font-size: 18px;
 }
 
+/*.nav .nav{display: none;}*/
+
 #disqus_container {text-align: center;}
 #disqus_container a{color: red;font-size: 20px;}
 
