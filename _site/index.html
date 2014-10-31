@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Siberiawolf的小窝</title>
+    <meta name="author" content="Siberiawolf" />
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="Siberiawolf的小窝" />
+    <meta name="keywords" content="Siberiawolf的小窝,siberiawolf,siberiawolf0307">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="/css/default.min.css" type="text/css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+    <div class="home-menu">
+        <div class="home-icon-con">
+            <a class="home-menu-icon" href="/" style="color:#fff;">Siberiawolf</a>
+            <a class="home-follow" href="#" title="Contact Me">+</a>
+        </div>
+        <div class="home-contact">
+            <a href="https://github.com/siberiawolf" target="_blank">
+                <div class="github"></div>
+            </a>
+            <a href="http://weibo.com/siberiawolf0307/" target="_blank">
+                <div class="weibo"></div>
+            </a>
+            <a href="https://twitter.com/siberiawolf0307" target="_blank">
+                <div class="twitter"></div>
+            </a>
+            <a href="https://www.facebook.com/siberiawolf0307" target="_blank">
+                <div class="facebook"></div>
+            </a>
+        </div>
+    </div>
+
+    <div class="index-content blog">
+    <div class="section">
+        <!-- 首页的导航 -->
+        <ul class="artical-cate">
+            <li class="on"><a href="/"><span>技术</span></a></li>
+            <li style="text-align:center"><a href="/opinion"><span>生活</span></a></li>
+            <li style="text-align:right"><a href="/project"><span>项目</span></a></li>
+        </ul>
+        <!-- 首页红色的导航 -->
+        <div class="cate-bar"><span id="cateBar"></span></div>
+        <!-- 文章列表 -->
+        <ul class="artical-list">
+        
+            <li>
+                <h2><a href="/personal-technology-growth">WEB前端开发资料索引</a></h2>
+                <div class="title-desc">整理WEB前端开发资料，主要来自我解除到的一些网站，欢迎大家补充。</div>
+            </li>
+        
+            <li>
+                <h2><a href="/zepto">Zepto.js使用</a></h2>
+                <div class="title-desc">介绍并讲解如何使用Zepto.js，并说明一些注意事项。</div>
+            </li>
+        
+            <li>
+                <h2><a href="/mongodb-simple-crud">mongodb简单CRUD</a></h2>
+                <div class="title-desc">如何启动mongodb、通过mongodb进行简单CRUD操作</div>
+            </li>
+        
+            <li>
+                <h2><a href="/github-pages">使用Github Pages建独立博客（二）</a></h2>
+                <div class="title-desc">整理搭建Github Pages遇到的问题</div>
+            </li>
+        
+            <li>
+                <h2><a href="/beiyuu-github-pages">使用Github Pages建独立博客（一）</a></h2>
+                <div class="title-desc">Github本身就是不错的代码社区，他也提供了一些其他的服务，比如Github Pages，使用它可以很方便的建立自己的独立博客，并且免费。</div>
+            </li>
+        
+        </ul>
+    </div>
+    <!-- 显示首页左侧的图片 -->
+    <div class="aside">
+    </div>
+</div>
+
+
+<script src="http://libs.baidu.com/jquery/1.7.1/jquery.min.js"></script>
+<script src="/js/post.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function(){
+        function animateBar($item,noAni){       // 首页三个导航
+            var spanLeft = $item.find('span').offset().left;
+            var conLeft = $item.parent().offset().left;
+            var left = spanLeft - conLeft;
+            var width = $item.find('span').width() + 8;
+
+            if(noAni){
+                $('#cateBar').css({left:left,width:width})
+            }else{
+                $('#cateBar').stop().animate({left:left,width:width},300)
+            }
+        }
+
+        var waitForFinalEvent = (function () {
+            var timers = {};
+            return function (callback, ms, uniqueId) {
+                if (!uniqueId) {
+                    uniqueId = "Don't call this twice without a uniqueId";
+                }
+                if (timers[uniqueId]) {
+                    clearTimeout (timers[uniqueId]);
+                }
+                timers[uniqueId] = setTimeout(callback, ms);
+            };
+        })();
+
+        $('.artical-cate li').mouseenter(function(){
+            animateBar($(this));
+        }).mouseleave(function(){
+            animateBar($('.artical-cate .on'));
+        });
+
+        $(window).resize(function(e){
+            waitForFinalEvent(function(){
+                animateBar($('.artical-cate .on'));
+            });
+        });
+        animateBar($('.artical-cate .on'),true);
+    });
+</script>
+
+    <script type="text/javascript">
+        $(function(){
+            $('.home-follow').click(function(e){        // 左侧悬浮点击      
+                e.preventDefault();
+
+                if($('.home-contact').is(':visible')){
+                    $('.home-contact').hide();
+                }else{
+                    $('.home-contact').show();
+                }
+            });
+        });
+    </script>
+    <!-- 百度统计代码 start -->
+    <script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F1248d51f06841e8dda82405c280d6597' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <!-- 百度统计代码 end -->
+</body>
+</html>
