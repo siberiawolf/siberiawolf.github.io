@@ -3,6 +3,7 @@ layout: post
 title: mongodb简单CRUD
 description: 如何启动mongodb、通过mongodb进行简单CRUD操作
 category: blog
+jd_id: 220524208
 ---
 
 ##创建db文件夹##

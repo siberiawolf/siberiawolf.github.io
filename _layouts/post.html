@@ -49,13 +49,15 @@ layout: default
             <li><a href="/frontend_knowledge/index.html">前端知识结构图</a></li>
         </ul>
     </div>
-
+	
+	<!-- jd推广 start -->
+	{% if page.jd_id %}
     <div class="sidenav">
-    	<!-- jd推广 start -->
-        <script type="text/javascript">var jd_union_pid="220522226";var jd_union_euid="";</script>
-        <script type="text/javascript" src="http://ads.union.jd.com/static/js/union.js"></script>
-        <!-- jd推广 end -->
+        <script type="text/javascript">var jd_union_pid="{{ page.jd_id }}";var jd_union_euid="";</script>
+        <script type="text/javascript" src="http://ads.union.jd.com/static/js/union.js"></script>        
     </div>
+    {% endif %}
+    <!-- jd推广 end -->
 </div>
 <script src="http://libs.baidu.com/jquery/1.7.1/jquery.min.js"></script>
 <!-- 多说公共JS代码 start -->
