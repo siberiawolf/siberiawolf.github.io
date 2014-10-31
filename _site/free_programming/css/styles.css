@@ -1,0 +1,87 @@
+/*
+from http://siberiawolf.com
+author: siberiawolf
+*/
+
+body {
+ padding-top:50px;
+}
+.navbar-default{z-index: 10;}
+.navbar-default .container{padding-left: 40px;}
+
+#masthead { 
+ min-height:250px;
+}
+
+#masthead h1 {
+ font-size: 30px;
+ line-height: 1;
+ padding-top:20px;
+}
+
+#masthead .well {
+ margin-top:8%;
+}
+
+@media screen and (min-width: 768px) {
+  #masthead h1 {
+    font-size: 50px;
+  }
+}
+
+.navbar-bright {
+ background-color:#111155;
+ color:#fff;
+}
+
+.affix-top,.affix{
+ position: static;
+}
+
+@media (min-width: 979px) {
+  #sidebar.affix-top {
+    position: static;
+    margin-top:30px;
+    width:228px;
+  }
+  
+  #sidebar.affix {
+    position: fixed;
+    top:70px;
+    width:228px;
+  }
+}
+
+#sidebar .active .active {
+  border:0 #563d7c solid;
+  border-right-width:5px;
+}
+
+.task-list{
+  font-size: 18px;
+}
+
+.nav .nav{display: none; padding-left: 20px;}
+.active .active a{color: #563d7c;font-weight: bold;}
+.nav>li>a{padding: 0px;}
+
+#disqus_container {text-align: center;}
+#disqus_container a{color: red;font-size: 20px;}
+
+.home-menu { z-index: 2; width: 138px; margin-top: 6px; }
+.home-menu-icon { line-height:38px; padding:0 8px; display:inline-block; color:#fff; font-size:18px;  background:#000; }
+.home-follow { margin-left:2px; line-height:38px; padding:0 8px; display:inline-block; color:#fff; font-size:18px; background:#000;  }
+.home-menu-icon:hover,.home-follow:hover { color:#fff; text-decoration:none; }
+.home-contact { color:#fff; margin-top:2px; background: #fff; padding: 8px 0px 8px 4px; text-align:center; display:none;}
+.home-contact a { width: 26px; display:inline-block; margin: 0 2px; }
+.home-contact div { background: url(/images/nav_bg.png); width: 20px;  height: 20px; background-size: auto 20px; border-radius: 2px;}
+.home-contact .github { background-color: #333; background-position: -20px 0; }
+.home-contact .weibo { background-color: #E90D24; background-position: -40px 0; }
+.home-contact .twitter { background-color: #50ABF1;  background-position: -80px 0; }
+.home-contact .facebook { background-color: #4862A3;  background-position: -100px 0; }
+
+@media (max-width: 992px){
+    #masthead{ margin-top: 40px; }
+    .home-follow{ display: none; }
+    #leftCol{ display: none; }
+}
