@@ -183,6 +183,13 @@ pre ol {
 #footer {
 	clear: both;
 	text-align: center;
+	width: 1060px;
+	background-color: #fff;
+	margin: 90px auto 60px;
+}
+#footer p{
+	padding: 20px;
+	font-size: 14px;
 }
 /****************entry style**************/
 .sidenav {
