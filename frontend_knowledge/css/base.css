@@ -125,6 +125,10 @@ a {
 
 #disqus_container{
     margin-top: 20px;
+    width: 1000px;
+    margin: 24px auto;
+    background-color: #fff;
+    padding: 14px 0;
 }
 #disqus_container a{
     font-size: 22px;
@@ -134,3 +138,14 @@ a {
 #infovis-canvaswidget {
   margin:25px 0 0 25px;
 }
+#footer {
+  clear: both;
+  text-align: center;
+  background-color: #fff;
+  margin: 24px auto;
+  width: 1000px;
+}
+#footer p{
+  padding: 20px;
+  font-size: 13px;
+}   
