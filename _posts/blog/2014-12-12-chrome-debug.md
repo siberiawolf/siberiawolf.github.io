@@ -1,7 +1,7 @@
 ---
 layout: post
 title: chrome调试
-description: chrome如何使用Elements、Resources、Network、Scripts、Timeline、Profiles等标签进行前端开发调试。（待整理）
+description: chrome如何使用Elements、Resources、Network、Scripts、Timeline、Profiles等标签进行前端开发调试。
 category: blog
 jd_id: 220519230
 ---
@@ -99,7 +99,7 @@ Resources标签页可以查看到请求的资源情况，包括CSS、JS、图片
 ![Console.log](http://siberiawolf.qiniudn.com/images/chrome_bebug/20141222172041.png)
 
 
-##补充
+##说明
 **官方帮助手册（需要翻墙）**
 
 1. [编辑样式和DOM](https://developer.chrome.com/devtools/docs/dom-and-styles)
