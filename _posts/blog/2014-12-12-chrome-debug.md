@@ -3,7 +3,7 @@ layout: post
 title: chrome调试
 description: chrome如何使用Elements、Resources、Network、Scripts、Timeline、Profiles等标签进行前端开发调试。
 category: blog
-jd_id: 220519230
+jd_id: 242876156
 ---
 
 Chrome浏览器不仅可以调试页面、JS、请求、资源、cookie，可以模拟手机进行调试。自从使用了Chrome，我就离不开它了。
