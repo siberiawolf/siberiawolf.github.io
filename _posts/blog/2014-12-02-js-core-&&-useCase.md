@@ -1,9 +1,9 @@
 ---
 layout: post
 title: JS中&&和||用法
-description: JS中&&和||用法。待整理
+description: JS中&&和||用法。（待整理）
 category: blog
-jd_id: 242877138
+jd_id: 242891127
 ---
 
 

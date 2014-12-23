@@ -3,7 +3,7 @@ layout: post
 title: 使用Github Pages建独立博客（二）
 description: 整理搭建Github Pages遇到的问题
 category: blog
-jd_id: 220524209
+jd_id: 242878153
 ---
 
 虽然已经有了[BeiYuu][]的搭建博客教程，一步一步跟着做，我还是遇到了很多的问题。整理如下：
