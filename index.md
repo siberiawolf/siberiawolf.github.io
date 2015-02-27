@@ -7,7 +7,7 @@ layout: home
         <!-- 首页的导航 -->
         <ul class="artical-cate">
             <li class="on"><a href="/"><span>技术</span></a></li>
-            <li style="text-align:center"><a href="/opinion"><span>生活</span></a></li>
+            <!-- <li style="text-align:center"><a href="/opinion"><span>生活</span></a></li> -->
             <li style="text-align:right"><a href="/project"><span>项目</span></a></li>
         </ul>
         <!-- 首页红色的导航 -->
@@ -21,6 +21,7 @@ layout: home
             </li>
         {% endfor %}
         </ul>
+        {{ paginator }}
     </div>
     <!-- 显示首页左侧的图片 -->
     <div class="aside">
