@@ -10,49 +10,15 @@
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link href="css/styles.css" rel="stylesheet">
+		<link href="css/style.min.css" rel="stylesheet">
 	</head>
 	<body>
-<nav class="navbar navbar-default navbar-fixed-top" role="banner">
-  <div class="container">
-    <div class="col-sm-12 navbar-header">
-    	<div class="col-md-6">
-    		<div class="home-menu">
-			    <div class="home-icon-con">
-		        <a class="home-menu-icon" href="/" style="color:#fff;">Siberiawolf</a>
-		        <a class="home-follow" href="#" title="Contact Me">+</a>
-			    </div>
-			    <div class="home-contact">
-		        <a href="https://github.com/siberiawolf" target="_blank">
-		            <div class="github"></div>
-		        </a>
-		        <a href="http://weibo.com/siberiawolf0307/" target="_blank">
-		            <div class="weibo"></div>
-		        </a>
-		        <a href="https://twitter.com/siberiawolf0307" target="_blank">
-		            <div class="twitter"></div>
-		        </a>
-		        <a href="https://www.facebook.com/siberiawolf0307" target="_blank">
-		            <div class="facebook"></div>
-		        </a>
-			    </div>
-				</div>
-    	</div>      
-    	<div class="col-md-6">
-    		<a href="/free_programming/index.html" class="navbar-brand">免费的编程中文书籍索引</a>      
-    	</div>  
-    </div>
-  </div>
-</nav>
 
 <div id="masthead">  
   <div class="container">
       <div class="row">
         <div class="col-md-7">
-          <h1 id="top">免费的编程中文书籍索引
-            <p class="lead">免费的编程中文书籍索引，欢迎投稿</p>
-            <p class="lead"><a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank">文章来源</a></p>
-          </h1>
+          <h1 id="top">免费的编程中文书籍索引</h1>
         </div>
         <div class="col-md-5">
           <div class="well well-lg">
@@ -82,7 +48,7 @@
 <div class="container">
 	<div class="row">
       <!--left-->
-      <div class="col-md-3" id="leftCol">
+      <div class="col-md-3" id="leftCol" style="margin-top:30px;">
         <ul class="nav nav-stacked" id="sidebar">        	
           <li class="active">
           	<a href="#no_language_ref">语言无关类</a>
@@ -632,7 +598,7 @@
 </div><!--/container-->
 <div id="footer">
     <p>
-        <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备14051142号</a>，版权所有 © 2014 
+        <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备14051142号</a>，版权所有 © 2015 
         <a href="http://siberiawolf.com/" target="_blank">Siberiawolf的小窝</a>。
         感谢<a href="https://pages.github.com/" target="_blank">GitHub Pages</a>开源技术。
         感谢<a href="https://portal.qiniu.com/signup?code=3l8fij4ieuvrm" target="_blank">七牛云存储</a>提供静态资源空间。
@@ -641,11 +607,49 @@
 </div>
 <!--/footer-->
 
-	<!-- script references -->
 		<script src="http://libs.baidu.com/jquery/2.0.2/jquery.min.js"></script>
 		<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-		<script src="js/scripts.js"></script>
-		<!-- 多说公共JS代码 start -->
+		<script type="text/javascript">
+			$(document).ready(function(){
+			  /* 定位菜单 */
+			  $('#sidebar').affix({
+			    offset: {
+			      top: 235
+			    }
+			  });
+
+			  /* 初始化菜单 */
+			  var $body = $(document.body);
+			  var navHeight = $('.navbar').outerHeight(true) + 10;
+
+			  $body.scrollspy({
+			  	target: '#leftCol',
+			  	offset: navHeight
+			  });
+
+			  // 页面平滑滚动
+			  $('a[href*=#]:not([href=#])').click(function() {
+			      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+			        var target = $(this.hash);
+			        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+			        if (target.length) {
+			          $('html,body').animate({
+			            scrollTop: target.offset().top 
+			          }, 1000);
+			          return false;
+			        }
+			      }
+			  });
+
+			  $(document).on('scroll',function(){
+			    $(".nav .nav").hide();
+			    var $active = $(".nav .active");
+			    $active.find(".nav").show();     
+			  });
+			  
+			});
+		</script>
+		<!-- 多说公共JS代码 -->
 		<script type="text/javascript">
 		var duoshuoQuery = {short_name:"siberiawolf"};
 			(function() {
@@ -657,12 +661,10 @@
 				 || document.getElementsByTagName('body')[0]).appendChild(ds);
 			})();
 			</script>
-		<!-- 多说公共JS代码 end -->
-		<!-- 百度统计代码 start -->
-    <script type="text/javascript">
-    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F1248d51f06841e8dda82405c280d6597' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <!-- 百度统计代码 end -->
+		<!-- 百度统计代码 -->
+	    <script type="text/javascript">
+	    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F1248d51f06841e8dda82405c280d6597' type='text/javascript'%3E%3C/script%3E"));
+	    </script>
 	</body>
 </html>
