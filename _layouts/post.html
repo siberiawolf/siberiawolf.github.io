@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<link rel="stylesheet" href="http://siberiawolf.qiniudn.com/js/prettify/prettify.css" />
+<link rel="stylesheet" href="/css/prettify.min.css" />
 <style type="text/css">
     body { background:#e8e8e8; }
     @media screen and (max-width: 750px){
@@ -33,6 +33,12 @@ layout: default
     </div>
     <!-- 微博关注 end -->
 	
+    <!-- 虾米音乐 start -->
+    <div class="sidenav">
+        <embed src="http://www.xiami.com/widget/0_1189468/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" wmode="transparent"></embed>
+    </div>
+    <!-- 虾米音乐 end -->
+
     <!-- 文章目录 start -->
     <div class="sidenav">
         <h2>技术</h2>
@@ -42,12 +48,12 @@ layout: default
         {% endfor %}
         </ul>
         
-        <h2>生活</h2>
+        <!-- <h2>生活</h2>
         <ul class="artical-list">
         {% for post in site.categories.opinion%}
             <li><a href="{{ post.url }}">{{ post.title }}</a></li>
         {% endfor %}
-        </ul>
+        </ul> -->
 
         <h2>项目</h2>
         <ul class="artical-list">
@@ -56,20 +62,14 @@ layout: default
         </ul>
     </div>
     <!-- 文章目录 end -->
-	
-	<!-- 虾米音乐 start -->
-    <div class="sidenav">
-        <embed src="http://www.xiami.com/widget/0_1189468/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" wmode="transparent"></embed>
-    </div>
-    <!-- 虾米音乐 end -->
     
     <!-- jd推广 start -->
-    {% if page.jd_id %}
+    <!-- {% if page.jd_id %}
     <div class="sidenav">
         <script type="text/javascript">var jd_union_pid="{{ page.jd_id }}";var jd_union_euid="";</script>
         <script type="text/javascript" src="http://ads.union.jd.com/static/js/union.js"></script>        
     </div>
-    {% endif %}
+    {% endif %} -->
     <!-- jd推广 end -->
 
 </div>
@@ -82,7 +82,10 @@ layout: default
         本站代码地址在<a href="https://github.com/siberiawolf/siberiawolf.github.io" target="_blank">这里</a>
     </p>
 </div>
-<script src="http://libs.baidu.com/jquery/1.7.1/jquery.min.js"></script>
+
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="/js/post.js"></script>
+
 <!-- 多说公共JS代码 start -->
 <script>var duoshuoQuery = {short_name:"siberiawolf"};</script>
 <script src="http://static.duoshuo.com/embed.js"></script>
