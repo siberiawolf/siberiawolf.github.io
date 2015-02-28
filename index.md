@@ -24,6 +24,5 @@ layout: home
         {{ paginator }}
     </div>
     <!-- 显示首页左侧的图片 -->
-    <div class="aside">
-    </div>
+    <div class="aside"></div>
 </div>

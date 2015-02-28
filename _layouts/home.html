@@ -3,46 +3,27 @@ layout:           default
 ---
 
 {{ content }}
+<!-- 首页JS -->
 <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 <script type="text/javascript">
     $(function(){
-        function animateBar($item,noAni){       // 首页三个导航
-            var spanLeft = $item.find('span').offset().left;
-            var conLeft = $item.parent().offset().left;
-            var left = spanLeft - conLeft;
-            var width = $item.find('span').width() + 8;
+        function animateBar($item,noAni){       // 首页导航动画
+            var spanLeft = $item.find('span').offset().left,
+                conLeft = $item.parent().offset().left,
+                left = spanLeft - conLeft,
+                width = $item.find('span').width() + 8;         // 横条比字体略宽
 
-            if(noAni){
-                $('#cateBar').css({left:left,width:width})
-            }else{
-                $('#cateBar').stop().animate({left:left,width:width},300)
-            }
+            noAni ? $('#cateBar').css({left:left,width:width}) : $('#cateBar').stop().animate({left:left,width:width},300);
+
         }
 
-        var waitForFinalEvent = (function () {
-            var timers = {};
-            return function (callback, ms, uniqueId) {
-                if (!uniqueId) {
-                    uniqueId = "Don't call this twice without a uniqueId";
-                }
-                if (timers[uniqueId]) {
-                    clearTimeout (timers[uniqueId]);
-                }
-                timers[uniqueId] = setTimeout(callback, ms);
-            };
-        })();
-
+        // 鼠标悬浮下方出现横条
         $('.artical-cate li').mouseenter(function(){
             animateBar($(this));
         }).mouseleave(function(){
             animateBar($('.artical-cate .on'));
         });
 
-        $(window).resize(function(e){
-            waitForFinalEvent(function(){
-                animateBar($('.artical-cate .on'));
-            });
-        });
-        animateBar($('.artical-cate .on'),true);
+        animateBar($('.artical-cate .on'),true); // 初始化
     });
 </script>
