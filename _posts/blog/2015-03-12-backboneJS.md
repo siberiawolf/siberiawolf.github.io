@@ -8,6 +8,7 @@ category: blog
 随着JavaScript程序变得越来越复杂，往往需要一个团队协作开发，这时代码的模块化和组织规范就变得异常重要了。MVC模式就是代码组织的经典模式。backbone.js就是为前端开发提供MVC模式滴！
 
 # backebone.js官网介绍
+
 [官方网站](http://backbonejs.org/)，中文手册可以看[这里](http://www.css88.com/doc/backbone/)。
 官网上面明确指出Backbone.js依赖[Underscore.js](http://underscorejs.org/),中文手册看[这里](http://learningcn.com/underscore/)，所以在使用backbone.js的时候，必须引入underscore.js。官网也提供了[查看源码](http://backbonejs.org/docs/backbone.html)的地址，文档注释写的非常详细。另外在官网上面都会给出代码示例，在代码的右上角上，有一个运行的按钮，点击的运行就可以看到这段代码运行的结果啦。
 
@@ -25,6 +26,7 @@ category: blog
 1. Examples 案例：backbone.js有很多案例，直接点击就可以查看了
 
 # MVC
+
 （1）Model
 
 Model表示数据层，也就是程序需要的数据源，通常使用JSON格式表示。
