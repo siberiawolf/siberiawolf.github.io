@@ -45,7 +45,7 @@ Controller表示控制层，用来对原始数据（Model）进行加工，传�
 
 ## backbone.js主要内容介绍
 
-#### constructor
+#### Model.constructor
 
 	var tom = new Backbone.Model({'name':'tom'});  // 创建学生tom
 	var peter = new Backbone.Model({'name':'peter'}); // 创建学生peter
@@ -60,7 +60,7 @@ Controller表示控制层，用来对原始数据（Model）进行加工，传�
 通过new的方式创建了一个Collection实例；通过调用students的add方法，将tom和peter添加到集合中。
 通过[文档](http://backbonejs.org/#Model-constructor)可以看出，通过{'name':'tom'}这种方式给Model设置的属性，实际上会调用model.set()方法。
 
-#### extend
+#### Model.extend
 
 	var User = Backbone.Model.extend({
 	sayHello : function(){  //实例方法
@@ -101,7 +101,7 @@ Controller表示控制层，用来对原始数据（Model）进行加工，传�
 
 extend会正确的设置原型链，所以可以通过extend实现继承。上面的代码就是创建父类User，然后子类ChildUser继承子父类。子类会继承父类的属性、方法
 
-#### initialize
+#### Model.initialize
 
     var User = Backbone.Model.extend({
 		defaults : {		
