@@ -168,7 +168,7 @@ msysgit是Windows版的Git，从http://msysgit.github.io/下载，然后按默�
 
 然后继续执行`gem install jekyll`即可。等待片刻，会提示21 gems installed。jekyll 安装完毕。
 
-##########**20150316补充**##########
+---------- **20150316补充** ----------
 
 确保`gem sources -l`之后列表中只有ruby.taobao.org。详情请看[RubyGems 镜像](http://ruby.taobao.org/)
 
