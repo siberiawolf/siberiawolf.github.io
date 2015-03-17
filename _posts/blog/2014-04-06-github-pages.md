@@ -1,12 +1,12 @@
 ---
 layout: post
 title: 使用Github Pages搭建博客
-description: 虽然已经有了[BeiYuu][http://beiyuu.com/github-pages/]的搭建博客教程，一步一步跟着做，我还是遇到了很多的问题
+description: 虽然已经有了<a href="http://beiyuu.com/github-pages/" target="_blank">BeiYuu</a>的搭建博客教程，一步一步跟着做，我还是遇到了很多的问题
 category: blog
 jd_id: 242878153
 ---
 
-虽然已经有了[BeiYuu][]的搭建博客教程，一步一步跟着做，我还是遇到了很多的问题。整理如下：
+虽然已经有了<a href="http://beiyuu.com/github-pages/" target="_blank">BeiYuu</a>的搭建博客教程，一步一步跟着做，我还是遇到了很多的问题。整理如下：
 
 ##Github Pages的特点
 
