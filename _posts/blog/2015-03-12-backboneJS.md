@@ -280,11 +280,11 @@ Backbone.events可以写成对象的形式，给视图绑定一组自定义事�
 
 
 #### 友情链接
-- [源码下载](http://siberiawolf.qiniudn.com/code/backboneJS.zip)
-- [官方网站](http://backbonejs.org/)
-- [中文手册](http://www.css88.com/doc/backbone/)
-- [查看源码](http://backbonejs.org/docs/backbone.html)
-- [Underscore.js](http://underscorejs.org/)
-- [中文手册看](http://learningcn.com/underscore/)，
+- [文中源码下载](http://siberiawolf.qiniudn.com/code/backboneJS.zip)
+- [Backbone.js官方网站](http://backbonejs.org/)
+    - [中文手册](http://www.css88.com/doc/backbone/)
+- [Backbone.js源码带详细注释](http://backbonejs.org/docs/backbone.html)
+- [Underscore.js官方网站](http://underscorejs.org/)
+    - [中文手册](http://learningcn.com/underscore/)
 
 
