@@ -9,9 +9,6 @@ category: blog
 
 ## backebone.js官网介绍
 
-[官方网站](http://backbonejs.org/)，中文手册可以看[这里](http://www.css88.com/doc/backbone/)。
-官网上面明确指出Backbone.js依赖[Underscore.js](http://underscorejs.org/),中文手册看[这里](http://learningcn.com/underscore/)，所以在使用backbone.js的时候，必须引入underscore.js。官网也提供了[查看源码](http://backbonejs.org/docs/backbone.html)的地址，文档注释写的非常详细。另外在官网上面都会给出代码示例，在代码的右上角上，有一个运行的按钮，点击的运行就可以看到这段代码运行的结果啦。
-
 官网左侧菜单栏里面就是backbone.js的全部模块了
 
 1. Events  事件：backbone.js是事件驱动的，可以给对象绑定自定义事件
@@ -24,6 +21,8 @@ category: blog
 1. Utility 工具：为解决冲突提供工具
 1. F.A.O 问答：常见问答
 1. Examples 案例：backbone.js有很多案例，直接点击就可以查看了
+
+在使用backbone.js的时候，必须引入underscore.js。此外在官网上面都会给出代码示例，在代码的右上角上，有一个运行的按钮，点击的运行就可以看到这段代码运行的结果啦。
 
 ## MVC
 
@@ -280,5 +279,12 @@ Backbone.events可以写成对象的形式，给视图绑定一组自定义事�
 使用js模版不仅可以将html代码和js代码分离，提高可读性，也能提高开发效率。backbone.js使用的underscore.js中的template
 
 
-#### 源码下载
-[源码下载](http://siberiawolf.qiniudn.com/code/backboneJS.zip)
+#### 友情链接
+- [源码下载](http://siberiawolf.qiniudn.com/code/backboneJS.zip)
+- [官方网站](http://backbonejs.org/)
+- [中文手册](http://www.css88.com/doc/backbone/)
+- [查看源码](http://backbonejs.org/docs/backbone.html)
+- [Underscore.js](http://underscorejs.org/)
+- [中文手册看](http://learningcn.com/underscore/)，
+
+
