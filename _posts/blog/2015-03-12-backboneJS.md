@@ -26,16 +26,11 @@ category: blog
 
 ## MVC
 
-（1）Model
-
+1. Model
 Model表示数据层，也就是程序需要的数据源，通常使用JSON格式表示。
-
-（2）View
-
+2. View
 View表示表现层，也就是用户界面，对于网页来说，就是用户看到的网页HTML代码。
-
-（3）Controller
-
+3. Controller
 Controller表示控制层，用来对原始数据（Model）进行加工，传送到View。
 
 由于网页编程不同于客户端编程，在MVC的基础上，JavaScript社区产生了各种变体框架MVP（Model-View-Presenter）、MVVM（Model-View-ViewModel）等等，有人就把所有这一类框架的各种模式统称为MV*。
@@ -241,7 +236,7 @@ listenTo允许一个对象监听另一个对象的事件，上面的代码就是
 Backbone.events可以写成对象的形式，给视图绑定一组自定义事件。
 
 #### template
-
+	
 	var Name = Backbone.Model.extend({
 		defaults : {
 			name : 'tom'
@@ -275,8 +270,17 @@ Backbone.events可以写成对象的形式，给视图绑定一组自定义事�
 			<div><%= name %></div>
 		<% } %>
 	</script>
+	
 
 使用js模版不仅可以将html代码和js代码分离，提高可读性，也能提高开发效率。backbone.js使用的underscore.js中的template
+
+#标题1
+
+##标题2
+
+###标题3
+
+####标题4
 
 
 #### 友情链接
