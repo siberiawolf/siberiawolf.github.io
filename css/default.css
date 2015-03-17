@@ -419,7 +419,7 @@ h3.about {
 .home-menu {
 	position:fixed;
 	top:15px;
-	left:15px;
+	left:5px;
 	z-index:5;
 	font-size:0;
 }
