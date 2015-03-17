@@ -254,9 +254,57 @@ google找到到stackoverflow中的一篇[问答](http://stackoverflow.com/questi
 
 需要用到什么语法，直接看文档就行了。
 
+---------- **20150317补充** ----------
+
+####依赖包 rdiscount 未找到
+    Generating... You are missing a library required for Markdown. Please run:
+    $ [sudo] gem install rdiscount
+    Conversion error: There was an error converting '_posts/2013-04-22-yizeng-hello-world.md/#excerpt'.
+
+    ERROR: YOUR SITE COULD NOT BE BUILT:
+       ------------------------------------
+       Missing dependency: rdiscount
+
+依赖包 rdiscount 未找到。 此问题最有可能的原因是，网站使用的是 rdiscount 作为 Markdown 引擎，而不是 Jekyll 默认的引擎，故需要手动自行安装。执行`gem install rdiscount`
+
+#### cannot load such file -- hitimes/hitimes (LoadError)
+    /Library/Ruby/Gems/2.0.0/gems/hitimes-1.2.2/lib/hitimes.rb:37:in `require': cannot load such file -- hitimes/hitimes (LoadError)
+    from /Library/Ruby/Gems/2.0.0/gems/hitimes-1.2.2/lib/hitimes.rb:37:in `rescue in <top (required)>'
+    from /Library/Ruby/Gems/2.0.0/gems/hitimes-1.2.2/lib/hitimes.rb:32:in `<top (required)>'
+    from /Library/Ruby/Gems/2.0.0/gems/timers-4.0.1/lib/timers/group.rb:4:in `require'
+    from /Library/Ruby/Gems/2.0.0/gems/timers-4.0.1/lib/timers/group.rb:4:in `<top (required)>'
+    from /Library/Ruby/Gems/2.0.0/gems/timers-4.0.1/lib/timers.rb:4:in `require'
+    from /Library/Ruby/Gems/2.0.0/gems/timers-4.0.1/lib/timers.rb:4:in `<top (required)>'
+    from /Library/Ruby/Gems/2.0.0/gems/celluloid-0.16.0/lib/celluloid/receivers.rb:3:in `require'
+    from /Library/Ruby/Gems/2.0.0/gems/celluloid-0.16.0/lib/celluloid/receivers.rb:3:in `<top (required)>'
+    from /Library/Ruby/Gems/2.0.0/gems/celluloid-0.16.0/lib/celluloid.rb:475:in `require'
+    from /Library/Ruby/Gems/2.0.0/gems/celluloid-0.16.0/lib/celluloid.rb:475:in `<top (required)>'
+    from /Library/Ruby/Gems/2.0.0/gems/listen-2.7.11/lib/listen.rb:1:in `require'
+    from /Library/Ruby/Gems/2.0.0/gems/listen-2.7.11/lib/listen.rb:1:in `<top (required)>'
+    from /Library/Ruby/Gems/2.0.0/gems/jekyll-watch-1.1.2/lib/jekyll/watcher.rb:25:in `require'
+    from /Library/Ruby/Gems/2.0.0/gems/jekyll-watch-1.1.2/lib/jekyll/watcher.rb:25:in `build_listener'
+    from /Library/Ruby/Gems/2.0.0/gems/jekyll-watch-1.1.2/lib/jekyll/watcher.rb:6:in `watch'
+    from /Library/Ruby/Gems/2.0.0/gems/jekyll-2.5.1/lib/jekyll/commands/build.rb:68:in `watch'
+    from /Library/Ruby/Gems/2.0.0/gems/jekyll-2.5.1/lib/jekyll/commands/build.rb:38:in `process'
+    from /Library/Ruby/Gems/2.0.0/gems/jekyll-2.5.1/lib/jekyll/commands/serve.rb:26:in `block (2 levels) in init_with_program'
+    from /Library/Ruby/Gems/2.0.0/gems/mercenary-0.3.4/lib/mercenary/command.rb:220:in `call'
+    from /Library/Ruby/Gems/2.0.0/gems/mercenary-0.3.4/lib/mercenary/command.rb:220:in `block in execute'
+    from /Library/Ruby/Gems/2.0.0/gems/mercenary-0.3.4/lib/mercenary/command.rb:220:in `each'
+    from /Library/Ruby/Gems/2.0.0/gems/mercenary-0.3.4/lib/mercenary/command.rb:220:in `execute'
+    from /Library/Ruby/Gems/2.0.0/gems/mercenary-0.3.4/lib/mercenary/program.rb:35:in `go'
+    from /Library/Ruby/Gems/2.0.0/gems/mercenary-0.3.4/lib/mercenary.rb:22:in `program'
+    from /Library/Ruby/Gems/2.0.0/gems/jekyll-2.5.1/bin/jekyll:20:in `<top (required)>'
+    from /usr/local/bin/jekyll:23:in `load'
+    from /usr/local/bin/jekyll:23:in `<main>'
+
+[hitimes版本冲突了](https://github.com/copiousfreetime/hitimes/issues/32)。我的解决办法是[安装hitimes-1.2.1](https://rubygems.org/gems/hitimes/versions/1.2.1)，执行命令`gem 'hitimes', '~> 1.2.1'`，然后把Ruby安装目录下`D:\ProgramFiles\Ruby22\lib\ruby\gems\2.2.0\gems`多余的hitimes版本删除掉
+
+
 ##总结
 
 记录我自己搭建这个博客的过程、遇到的问题。
+
+
 
 
 [BeiYuu]:    http://beiyuu.com  "BeiYuu"
