@@ -178,8 +178,45 @@ PS：Python不像JS一样用`{}`判断语法块，而是通过空格来判断语
 在命令提示符中运行`easy_install Jinja2`,执行结束后，Jinja2就安装成功了
 
 ### 运行onlinetodos
-首先需要将教程[Backbone.js入门教程第二版][mvcSecond]中的[代码][code]下载到本地。然后先双击运行init_sqlite.py创建数据库，在命令提示符下运行server.py启动服务器，最后在浏览器中访问`http://localhost:8080/`，就可以看到登录页面啦~~
+首先需要将教程[Backbone.js入门教程第二版][mvcSecond]中的[代码][code]下载到本地。然后先双击运行init_sqlite.py创建数据库，在命令提示符下运行server.py启动服务器，最后在浏览器中访问`http://localhost:8080/`，就可以看到登录页面啦~~  
 
+
+### sqlite可视化工具
+在命令行中查看数据库中的数据总是不太方便。而且我有些时候在命令号下用`.database`都找不到我的db文件，也不知道为什么。所以我干脆找了个可视化工具。这里我使用的是[Navicat][Navicat]。
+
+### 分析登录页面
+虽然教程中给出各种注释比较多，大体的思路倒是也能看明白，但是由于不懂python，而且这个教程中有很多需要注意的地方，于是查资料继续整理。  
+当用户输入`http://localhost:8080/`，也就是访问首页index，就会执行到`index`类。由于是GET请求，自然就会执行GET函数。
+#### login.GET函数  
+- 在GET函数中首先判断`session.login`是否为`False`，如果为`False`，就跳转到`/login`  
+- 由于访问了`/login`就会执行`login`类，因为是GET请求，就会执行GET函数
+- 在`login`类的`GET`函数中，通过[jinja][jinja]提供的get_template()方法，将templates目录下的login.html加载出来，这样登录界面就渲染完毕了。
+接下来用户输入帐号密码。当用户点击登录，由于这里是一个表单，并且`method="POST"`，自然会执行POST函数。
+
+#### login.POST函数
+- 在POST函数中，首先通过`web.put()`获取用户输入的帐号和密码
+- 如果当用户输入帐号并且帐号等于密码的时候，将`session.login`设置为`True`，表示用户登录成功。将页面跳转到`/`，也就是根目录下。
+- 在`index.GET`函数中由于已经登录成功，就会通过[jinja][jinja]提供的get_template()方法，将templates目录下的index.html加载出来，这样todo页面就渲染完毕了。
+- 如果当用户输入的帐号和密码不相等的时候，会通过get_template()再加载一遍login.html，并且会传递一个json对象`{"error": u"用户名或密码错误！"}`
+- 再次进入到了login.html，这次用到了[jinja templates][jinja templates]。在login.html中，用模版语言判断了如果有error，就显示error信息。这样当帐号密码错误的时候，页面上就会提示`用户名或密码错误！`
+
+#### session.login
+因为在调试模式下，web.py不能使用session，但是如果非要在调试模式下使用session也不是不可能。[解决方法][session_reloader]。  
+所以在server.py中可以找到类似的代码。不同的是，server.py中存储的是login，值为False
+
+
+#### Jinja 
+如何使用Jinja呢？需要引入jinja2，在[官网中][basics]给出的用例，使用的是`PackageLoader`，教程中使用的是`FileSystemLoader`，这个无所谓了，总之是需要使用jinja2中的`Environment`进行初始化即可。给`Environment`传递一个参数，就是当前templates所在的目录
+
+#### 错误信息中字符串前，有个字母`u`
+为什么要在错误信息前面添加一个`u`呢？如果去掉这个`u`就会出现如下错误。
+
+    <type 'exceptions.UnicodeDecodeError'> at /login
+	'gbk' codec can't decode bytes in position 22-23: illegal multibyte sequence
+
+又是编码错误。原来Jinja使用的是[Unicode][unicode]编码，如果在字符串前面加上`u`，会使用当前model中的编码对字符串进行编码。而在当前model中使用的是utf-8编码，所以自然就会正常了
+
+#### json
 
 
 
@@ -194,6 +231,7 @@ PS：Python不像JS一样用`{}`判断语法块，而是通过空格来判断语
 - [MVC框架与Backbone.js](http://javascript.ruanyifeng.com/advanced/backbonejs.html)
 - [Backbone Tutorials](http://backbonetutorials.com/)
 - [SQLite 教程](http://www.w3cschool.cc/sqlite/sqlite-tutorial.html)
+- [Jinja2中文手册](http://docs.jinkan.org/docs/jinja2/index.html)
 
 [mvcSecond]:    https://github.com/the5fire/backbonejs-learning-note
 [helloworld]:    http://webpy.org/cookbook/helloworld
@@ -204,3 +242,8 @@ PS：Python不像JS一样用`{}`判断语法块，而是通过空格来判断语
 [setuptools]:    https://pypi.python.org/pypi/setuptools
 [ez_setup.py]:    https://bootstrap.pypa.io/ez_setup.py
 [code]:    https://github.com/the5fire/onlinetodos
+[Navicat]:    http://www.navicat.com/download
+[jinja templates]:    http://jinja.pocoo.org/docs/dev/templates/
+[unicode]:    http://jinja.pocoo.org/docs/dev/api/#unicode
+[session_reloader]:    http://webpy.org/cookbook/session_with_reloader.zh-cn
+[basics]:    http://jinja.pocoo.org/docs/dev/api/#basics
