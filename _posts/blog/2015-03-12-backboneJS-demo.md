@@ -191,8 +191,8 @@ PS：Python不像JS一样用`{}`判断语法块，而是通过空格来判断语
 - 在GET函数中首先判断`session.login`是否为`False`，如果为`False`，就跳转到`/login`  
 - 由于访问了`/login`就会执行`login`类，因为是GET请求，就会执行GET函数
 - 在`login`类的`GET`函数中，通过[jinja][jinja]提供的get_template()方法，将templates目录下的login.html加载出来，这样登录界面就渲染完毕了。
-接下来用户输入帐号密码。当用户点击登录，由于这里是一个表单，并且`method="POST"`，自然会执行POST函数。
-
+接下来用户输入帐号密码。当用户点击登录，由于这里是一个表单，并且`method="POST"`，自然会执行POST函数。  
+  
 #### login.POST函数
 - 在POST函数中，首先通过`web.put()`获取用户输入的帐号和密码
 - 如果当用户输入帐号并且帐号等于密码的时候，将`session.login`设置为`True`，表示用户登录成功。将页面跳转到`/`，也就是根目录下。
