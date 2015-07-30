@@ -1,6 +1,6 @@
 ---
 layout: post
-title: grunt 自动化压缩代码
+title: grunt 自动化之压缩javascript代码
 description: 为何要用构建工具？一句话：自动化。
 category: blog
 ---
@@ -131,6 +131,8 @@ source map就是一个信息文件，通过这个信息文件，可以让压缩�
 ## 总结
 使用了grunt之后压缩代码、调试压缩代码，就很方便了~当然如果你不想配置node和grunt环境，宁愿使用在线工具，也是可以的~  
 grunt并不只是可以用来压缩代码。实际上对于需要返回重复的任务，如压缩、编译、单元测试等，使用grunt都可以自动话解决。  
+
+## 参考连接
 补充一篇文章：[grunt整合版][grunt整合版]
 
 [Grunt]:    http://gruntjs.com/
