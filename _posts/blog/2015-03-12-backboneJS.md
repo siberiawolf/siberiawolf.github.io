@@ -40,7 +40,7 @@ Controller表示控制层，用来对原始数据（Model）进行加工，传�
 
 框架的优点在于合理组织代码、便于团队合作和未来的维护，缺点在于有一定的学习成本，且限制你只能采取它的写法。
 
-### 1.Events
+## 1.Events
 
 #### listenTo
 
@@ -81,7 +81,7 @@ Controller表示控制层，用来对原始数据（Model）进行加工，传�
 listenTo允许一个对象监听另一个对象的事件，上面的代码就是让view监听model的change事件，然后调用`show()`方法
 
 
-### 2.Model
+## 2.Model
 
 #### constructor
 
@@ -239,7 +239,7 @@ extend会正确的设置原型链，所以可以通过extend实现继承。上�
 如果验证错误，会返回`validationError`，它的消息就是在验证时候`return`回来的信息；  
 如果验证失败是不会向服务器发送请求保存数据的，也就是说model数据并不会被修改。
 
-### 3.View
+## 3.View
 
 #### extend
 
@@ -304,7 +304,7 @@ Backbone.events可以写成对象的形式，给视图绑定一组自定义事�
 
 使用js模版不仅可以将html代码和js代码分离，提高可读性，也能提高开发效率。backbone.js使用的underscore.js中的template
 
-### 4.Sync
+## 4.Sync
 
 #### 重写Backbone.sync
 
@@ -353,22 +353,7 @@ Backbone是如何区分第一次请求还是第二次请求的呢？
 
 
 
-###F.A.Q.
-
-#### events 是如何给视图绑定一组事件的？
-
-#### el属性和$el属性的区别？
-
-#### url和urlRoot的区别？
-
-#### 单词为啥首字母大写？
-
-#### 使用bind还是on？
-
-#### Backbone.sync自动传参CRUD是怎么回事？
-
-
-### 友情链接
+## 友情链接
 - [文中源码下载](http://siberiawolf.qiniudn.com/code/backboneJS.zip)
 - [Backbone.js官方网站](http://backbonejs.org/)
     - [中文手册](http://www.css88.com/doc/backbone/)
@@ -380,3 +365,4 @@ Backbone是如何区分第一次请求还是第二次请求的呢？
 - [Backbone Tutorials](http://backbonetutorials.com/)
 
 [mvcSecond]:    https://github.com/the5fire/backbonejs-learning-note
+

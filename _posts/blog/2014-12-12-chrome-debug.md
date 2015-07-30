@@ -21,7 +21,7 @@ Chrome浏览器不仅可以调试页面、JS、请求、资源、cookie，还可
 打开的开发者工具就长下面的样子：
 ![F12](http://siberiawolf.qiniudn.com/images/chrome_bebug/20141222161221.png)
 
-不过我一般习惯与点左下角的那个按钮，**将开发者工具弹出作为一个独立的窗口**：
+不过我一般习惯与点右下角的那个按钮，**将开发者工具弹出作为一个独立的窗口**：
 ![独立窗口](http://siberiawolf.qiniudn.com/images/chrome_bebug/20141222160612.png)
 
 
