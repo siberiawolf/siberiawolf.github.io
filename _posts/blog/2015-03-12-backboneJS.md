@@ -340,7 +340,7 @@ Backbone是如何区分第一次请求还是第二次请求的呢？
 	};
 
 在[Model.id文档](http://backbonejs.org/#Model-id)中指出，如果通过set设置了model的id，就会将这个id拷贝到模型上，作为model的直接属性。在下图中可以发现通过`Model.set('id',1)`，给attributes中添加了id属性，也直接给model添加了id属性。
-![setId](http://siberiawolf.qiniudn.com/images/backboneJS/setId.png)
+[![setId][setId]][setId]
 但是相反的，如果用`model.id=1`的方式直接给model添加id属性，是不会拷贝到attributes中的。如果只是给model直接添加了id，`Model.isNew`返回的一直都会是true。
 
     Backbone.sync = function(method, model) {
@@ -349,7 +349,7 @@ Backbone是如何区分第一次请求还是第二次请求的呢？
 	  model.id=1;	// 给model直接添加id属性
 	  console.log(model.isNew()); // 返回true
 	};
-![attributeId](http://siberiawolf.qiniudn.com/images/backboneJS/attributeId.png)
+[![attributeId][attributeId]][attributeId]
 
 
 
@@ -365,4 +365,6 @@ Backbone是如何区分第一次请求还是第二次请求的呢？
 - [Backbone Tutorials](http://backbonetutorials.com/)
 
 [mvcSecond]:    https://github.com/the5fire/backbonejs-learning-note
+[setId]:    http://siberiawolf.qiniudn.com/images/backboneJS/setId.png
+[attributeId]:    http://siberiawolf.qiniudn.com/images/backboneJS/attributeId.png
 

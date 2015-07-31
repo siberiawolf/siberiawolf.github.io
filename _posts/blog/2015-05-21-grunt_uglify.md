@@ -110,12 +110,12 @@ Gruntfile.js文件如下
 ## 生成的文件
 
 最后我们再来看下生成的文件吧。
-![审查元素](http://siberiawolf.qiniudn.com/@/images/grunt_uglify/list.png)
+[![生成的文件][list]][list]
 dist文件夹下是压缩之后的代码  
 node_modules文件夹下是通过package.json配置生成的插件  
 source文件夹下是未压缩的代码  
 dist文件夹下内容如下  
-![审查元素](http://siberiawolf.qiniudn.com/@/images/grunt_uglify/dist.png)
+[![审查元素][dist]][dist]
 tmp.js是将doT.js和common.js合并之后的文件  
 tmp.min.js是将tmp.js压缩之后的文件
 tmp.min.js.map是生成的source map文件
@@ -123,7 +123,7 @@ tmp.min.js.map是生成的source map文件
 ## source map
 source map就是一个信息文件，通过这个信息文件，可以让压缩后的*.min.js文件找到与之对应的未压缩的*.js文件。调试的时候直接使用未压缩的文件。  
 开启source map的方法也很简单，在Chrome浏览器中F12开启开发者工具，打开Setting面板，找到Sources，其中有个`Enable JavaScript source maps`选项，勾选上就可以了(PS:Chrome版本是39之后的)。然后在Sources标签下，就会发现多加载了个js文件。
-![审查元素](http://siberiawolf.qiniudn.com/@/images/grunt_uglify/tmp.png)
+[![审查元素][tmp]][tmp]
 关于[Source map的详解][JavaScript Source Map 详解]，直接看吧~  
 如何在Chrome下使用Source map，谷歌已经给出了详细方法：[Chrome using Source Maps][Chrome using Source Maps]  
 此外有很多语言支持source map，也有很多工具支持source map，甚至包括css也支持source map。已经有人整理出来一份列表了[Source maps][Source maps]
@@ -145,3 +145,6 @@ grunt并不只是可以用来压缩代码。实际上对于需要返回重复的
 [Chrome using Source Maps]:    https://developer.chrome.com/devtools/docs/javascript-debugging#using-source maps
 [Source maps]:    https://github.com/ryanseddon/source-map/wiki/Source-maps:-languages,-tools-and-other-info
 [grunt整合版]:    http://www.cnblogs.com/yexiaochai/p/3603389.html
+[list]:    http://siberiawolf.qiniudn.com/@/images/grunt_uglify/list.png
+[dist]:    http://siberiawolf.qiniudn.com/@/images/grunt_uglify/dist.png
+[tmp]:    http://siberiawolf.qiniudn.com/@/images/grunt_uglify/tmp.png

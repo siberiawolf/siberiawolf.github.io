@@ -7,7 +7,7 @@ category: blog
 
 ## 遇到的问题
 昨天闲来无事，想起了雅虎的前端优化十四条军规，然后安装了一个PageSpeed插件，检测了下自己的网站，其中有一个优化图片的建议，让我比较感兴趣。
-![优化图片建议](http://siberiawolf.qiniudn.com/images/grunt_imagemin/image_pageSpeed.png)
+[![优化图片建议][image_pageSpeed]][image_pageSpeed]
 从上图可以看到，按照谷歌的建议，压缩后的大小减少31%，还是比较可观的。  
 其实这个问题，很久之前就遇到过（大概2年前），当时Google还没有PageSpeed这个Chrome插件，也是提示我优化图片。后来用ps调整图片的分辨率等信息，图片大小也确实变小了。然后就没有继续思考这个问题。  
 使用ps优化图片固然是一种解决办法，但是实际项目中，图片都是由美工制作的。有些图片还是会有压缩的空间。如果把能压缩的图片用ps一个个打开，在优化的话，又会很麻烦，so，自动化
@@ -15,7 +15,7 @@ category: blog
 ## imagemin
 用过了Grunt之后，再来使用imagemin灰常简单。  
 执行命令`npm install grunt-contrib-imagemin --save-dev`安装imagemin，如下图
-![安装imagemin](http://siberiawolf.qiniudn.com/images/grunt_imagemin/install_imagemin.png)
+[![安装imagemin][install_imagemin]][install_imagemin]
 然后配置下Gruntfile.js。没按照官网给出的Example config配置，找了个简单的
     
     module.exports = function (grunt) {
@@ -39,7 +39,7 @@ category: blog
 	};
 最后，执行命令`grunt`，然后就可以啦！有多少张图片，都可以自动压缩完成了。  
 压缩之后的效果如下图，然后在PageSpeed中就不会给我优化图片的建议了~
-![压缩图片](http://siberiawolf.qiniudn.com/images/grunt_imagemin/after_imagemin.png)
+[![压缩图片][after_imagemin]][after_imagemin]
 
 ## 参考连接
 - [page speed 百科][page speed]
@@ -49,6 +49,9 @@ category: blog
 
 
 [page speed]:    http://baike.baidu.com/link?url=DxwsmKuA2uZm0h3-FJpwQ1opqt9HwSwNt-_lMxfCJoFuP3xwxLzEc5Toq9uUENnvA9ekjQcX5WmumxVRy0uxJ_
+[image_pageSpeed]:    http://siberiawolf.qiniudn.com/images/grunt_imagemin/image_pageSpeed.png
+[install_imagemin]:    http://siberiawolf.qiniudn.com/images/grunt_imagemin/install_imagemin.png
+[after_imagemin]:    http://siberiawolf.qiniudn.com/images/grunt_imagemin/after_imagemin.png
 [PageSpeed Tools]:    https://developers.google.com/speed/pagespeed/?hl=zh-CN
 [前端优化十四条军规]:    http://developer.51cto.com/art/201207/347525_all.htm
 [imagemin]:    https://github.com/gruntjs/grunt-contrib-imagemin
