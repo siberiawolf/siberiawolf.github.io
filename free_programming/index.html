@@ -20,6 +20,8 @@
             <div class="row">
                 <div class="col-md-7">
                     <h1 id="top">免费的编程中文书籍索引</h1>
+                    <br>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;本文所列文章全部来自<a href="http://weibo.com/justjavac" target="_blank">@justjavac</a>。由于本文更新方式为手动更新，更新时间较慢，所以最新最全最好的文章，请直接访问作者：<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank">免费的编程中文书籍索引</a></p>
                 </div>
                 <div class="col-md-5">
                     <div class="well well-lg">
@@ -711,11 +713,17 @@
                 }
             });
 
+            $('.container .col-md-9 a').each(function(index, element) {
+                $(this).attr('target', '_blank');
+            });  
+
             $(document).on('scroll', function() {
                 $(".nav .nav").hide();
                 var $active = $(".nav .active");
                 $active.find(".nav").show();
             });
+
+
 
         });
         </script>
