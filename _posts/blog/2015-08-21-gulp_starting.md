@@ -116,15 +116,44 @@ category: blog
 ## gulp 语法
 请参考[第一个gulp程序][4286638]，比我整理的要详细得多啦~
 
+## 合并、压缩JS代码，并生成sourcemap
+合并、压缩、生成sourcemap拆分成了三个任务，既然我想执行这三个任务，那肯定是要通过三个插件完成的。首先安装这三个插件。
+
+- [gulp-concat][gulp-concat]
+- [gulp-uglify][gulp-uglify]
+- [gulp-sourcemaps][gulp-sourcemaps]
+
+插件安装方式跟安装htmlmin的时候一样。  
+安装插件的时候可以会出现两种情况，第一种情况就是被墙了，可以尝试[这里][cross-wall]方式；第二种情况就是插件安装的路径不对，有可能安装到了全局目录导致模块引用出错。出现这种情况那就重新下载模块就行。需要注意的是，重新下载插件的之前，一定要把之前的node_modules目录下内容删干净，包括全局目录下和项目目录下。
+
+	var gulp = require('gulp');
+	var concat = require('gulp-concat');
+	var uglify = require('gulp-uglify');
+	var sourcemaps = require('gulp-sourcemaps');
+	 
+	gulp.task('javascript', function() {
+	  return gulp.src('lib/*.js')
+	  	.pipe(concat('all.js'))	// 将lib目录下的所有js文件，合并到all.js中
+	  	.pipe(sourcemaps.init())	// 初始化sourcemaps
+	  	// 压缩操作必须在sourcemapas插件的init()和write()之间
+	  	// a list of such plugins: https://github.com/floridoo/gulp-sourcemaps/wiki/Plugins-with-gulp-sourcemaps-support
+	    .pipe(uglify())			// 压缩js代码
+	 	// .pipe(sourcemaps.write())	// 默认采用的是inline source map
+	 	.pipe(sourcemaps.write("../maps"))	// 也可以生成一个source map 文件
+	    .pipe(gulp.dest('dist'));	
+	});
+	gulp.task('default', ['javascript']);
+
 ## 总结
 - gulp比grunt配置起来要简单。
 - 其实gulp本身也使用了很多的别的模块，例如[node-glob][node-glob]
-- 剩下的难点就是如何灵活的时候插件还有Gulp流不兼容的问题。
+- 剩下的难点就是如何灵活的使用插件还有Gulp流不兼容的问题。
 
 ## 参考连接
 - [原文链接][grunt_uglify]
 - [第一个gulp程序 by 司徒正美][4286638]
 - [gulpfile文件详解][9540447]
+- [是时候搁置Grunt，耍一耍gulp了][是时候搁置Grunt，耍一耍gulp了]
 
 
 [grunt_uglify]:    http://siberiawolf.com/grunt_uglify/
@@ -138,6 +167,11 @@ category: blog
 [htmlmin_end]:    http://siberiawolf.qiniudn.com/@/images/grunt_uglify/htmlmin_end.png
 [gulp_watching]:    http://siberiawolf.qiniudn.com/@/images/grunt_uglify/gulp_watching.png
 [node-glob]:    https://github.com/isaacs/node-glob
+[是时候搁置Grunt，耍一耍gulp了]:    http://www.cnblogs.com/vajoy/p/4170525.html
+[gulp-concat]:    https://www.npmjs.com/package/gulp-concat/
+[gulp-uglify]:    https://www.npmjs.com/package/gulp-uglify/
+[gulp-sourcemaps]:    https://www.npmjs.com/package/gulp-sourcemaps/
+[cross-wall]:    http://hi.barretlee.com/2014/03/31/npm-cross-wall/
 
 
 
