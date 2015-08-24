@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Hello Gulp!
-description: 第一个Gulp程序；Gulp压缩html代码
+description: 第一个Gulp程序；Gulp压缩html代码；Gulp合并、压缩JS并生成source map
 category: blog
 ---
 
