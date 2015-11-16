@@ -144,6 +144,99 @@ category: blog
 	});
 	gulp.task('default', ['javascript']);
 
+## 压缩CSS代码，并生成sourcemap
+
+	var gulp = require('gulp');
+	var minifyCss = require('gulp-minify-css');
+	var sourcemaps = require('gulp-sourcemaps');
+
+	gulp.task('minifyCss', function() {
+	  return gulp.src('src/*.css')    // src 目录下所有css文件
+	    .pipe(sourcemaps.init())    // 初始化sourcemaps
+	    .pipe(minifyCss())          // 压缩css
+	                                // 配置压缩css参数，参考clean-css
+	    .pipe(sourcemaps.write("../maps"))   // 写入sourcemaps
+	    .pipe(gulp.dest('dist'));
+	});
+
+	gulp.task('default', ['minifyCss']);
+
+压缩CSS类似压缩JS，通过搜索找到了两个可以压缩CSS的插件：gulp-cssmin和gulp-minify-css。前者在gulpjs.com网站中已经搜索不到了，而且已经给出了重复提示：`Duplicate of gulp-minify-css`。后者只不过是封装了另一个插件`clean-css`，在官网的说明上面可以找到。
+
+
+## 压缩图片
+	
+	var gulp = require('gulp');
+	var imagemin = require('gulp-imagemin');
+	var pngquant = require('imagemin-pngquant');
+
+	 
+	gulp.task('imagemin', function () {
+	    return gulp.src('src/images/*')
+	        .pipe(imagemin({
+	            progressive: true,                      // 设置无损转换
+	            svgoPlugins: [{removeViewBox: false}],  // svgo插件设置：不删除viewbox属性
+	            // use: [pngquant()]                       // 添加pngquat插件给imagemin使用
+	        }))
+	        .pipe(gulp.dest('dist/images'));      
+	});
+
+	gulp.task('default', ['imagemin']);
+
+我试了一下使用pngquant插件和不使用pngquant插件（没有修改任何配置），压缩后的文件大小是一样的。使用pngquat可以设置压缩的质量、甚至压缩速度。
+
+# 生成CSS雪碧图
+先介绍下CSS雪碧图，其实做过前端的人都知道雪碧图，只是不知道还有这么个高大上的名字而已。CSS雪碧图，也就是CSS Sprite，说白了就是将小图标和背景图像合并到一张图片上，然后利用css的背景定位来显示需要显示的图片部分。在没有使用自动化工具之前，如果需要完成这个定位技术，需要用PS等其他工具，去查看每个图片的大小，然后再写出CSS代码进行定位。如果大小刚好设置得对了，那么完事ok，如果大小差了1、2像素，就需要再手动的调整下CSS代码，如此反复调整~。  
+现在有了自动化工具，情况就不一样了，只需要动动手指头，让电脑自己工作就行了~  
+下载插件什么的就不用强调，这里我使用的是[gulp.spritesmith](https://www.npmjs.com/package/gulp.spritesmith/)，其实如果从[npm](https://www.npmjs.com/)上搜索spritesmith话，能搜到不同版本的spritesmith。
+	
+	var gulp = require('gulp');
+	var spritesmith = require('gulp.spritesmith');
+	 
+	gulp.task('sprite', function () {
+	  return gulp.src('src/images/background/*.png')	// 目录下共有三张图片
+	      .pipe(spritesmith({
+	        imgName: 'sprite.png',    // 生成雪碧图的名字
+	        cssName: 'sprite.css'     // 生成雪碧图的css文件
+	    }))
+	    .pipe(gulp.dest('dist/images/background'));
+	});
+	gulp.task('default', ['sprite']);
+
+生成的css文件如下：
+
+	/*
+	Icon classes can be used entirely standalone. They are named after their original file names.
+
+	```html
+	<!-- `display: block` sprite -->
+	<div class="icon-home"></div>
+
+	<!-- `display: inline-block` sprite -->
+	<img class="icon-home" />
+	```
+	*/
+	.icon-fork {
+	  background-image: url(sprite.png);
+	  background-position: 0px 0px;
+	  width: 32px;
+	  height: 32px;
+	}
+	.icon-github {
+	  background-image: url(sprite.png);
+	  background-position: -32px 0px;
+	  width: 32px;
+	  height: 32px;
+	}
+	.icon-twitter {
+	  background-image: url(sprite.png);
+	  background-position: 0px -32px;
+	  width: 32px;
+	  height: 32px;
+	}
+
+现在，不光图片合并了，连css样式都直接生成了，么么哒~
+
 ## 总结
 - gulp比grunt配置起来要简单。
 - 其实gulp本身也使用了很多的别的模块，例如[node-glob][node-glob]
