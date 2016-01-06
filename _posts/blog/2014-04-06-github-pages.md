@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 使用Github Pages搭建博客
-description: 虽然已经有了<a href="http://beiyuu.com/github-pages/" target="_blank">BeiYuu</a>的搭建博客教程，一步一步跟着做，我还是遇到了很多的问题
+description: 虽然已经有了<a href="http://beiyuu.com/github-pages/" target="_blank">BeiYuu</a>的搭建博客教程，一步一步跟着做，我还是遇到了很多的问题 20160104 更新mac ox 遇到的问题
 category: blog
 jd_id: 242878153
 ---
@@ -299,12 +299,52 @@ google找到到stackoverflow中的一篇[问答](http://stackoverflow.com/questi
 
 [hitimes版本冲突了](https://github.com/copiousfreetime/hitimes/issues/32)。我的解决办法是[安装hitimes-1.2.1](https://rubygems.org/gems/hitimes/versions/1.2.1)，执行命令`gem 'hitimes', '~> 1.2.1'`，然后把Ruby安装目录下`D:\ProgramFiles\Ruby22\lib\ruby\gems\2.2.0\gems`多余的hitimes版本删除掉
 
+---------- **20160104补充** ----------  
+由于16年元旦新购置了一台mac本，以下主要记录在mac系统上出现的问题。
 
-##总结
+#### taobao.ruby.org 
+今天在执行`gem jekyll install`提示等错误跟[之前一样](https://github.com/jekyll/jekyll/issues/1409)。不同的是淘宝停用了基于HTTP协议的镜像服务。只需要把`http://ruby.taobao.org`替换成`https://ruby.taobao.org/`
 
-记录我自己搭建这个博客的过程、遇到的问题。
+#### Caching your GitHub password in Git
+如果采用https的方式push到Github上，每次都会提示输入用户名到验证码。在Mac上我是修改成了SSH的方式。为了熟练使用Https连接方式，Mac上我才用的是Https连接方式。
+直接从[Github帮助](https://help.github.com/articles/caching-your-github-password-in-git/)上配置即可，内容如下：
+    
+    $ git credential-osxkeychain
+    # Test for the cred helper
+    # 测试是否安装了osxkeychain，如果安装了酒会提示下方内容。
+    Usage: git credential-osxkeychain <get|store|erase>
 
+    ＃ 由于我已经安装了，所以第二步、第三步就省略了，直接配置让git使用osxkeychain
 
+    git config --global credential.helper osxkeychain
+    # 设置git使用osxkeychain
+    # Set git to use the osxkeychain credential helper
+
+    vi ~/.gitconfig
+    # 检查.gitconfig 文件是否配置成功，如果`helper = osxkeychain`则说明配置成功了。
+
+我的电脑是新配置的环境，还没有成功push，所以需要先输入用户名和密码。等下次再push的时候，就不会提示输入用户名和密码了。  
+如果不了解什么是OSX keychanin，可以看[这里](http://www.mac52ipod.cn/post/mac-keychain-access-helps-you-find-back-forgotten-password.php)  
+在mac的钥匙串中可以查看github的帐号和密码：![osxchain](http://siberiawolf.qiniudn.com/images/githubpages/osxkeychain.png)
+
+#### write permissions for gem install bundler
+本以为像windows中一样，直接执行`gem jekyll install`就可以了呢，结果提示我没有权限。看到好多解决方案，最终还是使用sudo命令安装了。执行`sudo gem jekyll install`。因为mac是linux系统，而有些操作是必须取得root用户权限的。  
+[解决权限](https://teamtreehouse.com/community/write-permissions-for-gem-install-bundler)
+
+####  Failed to build gem native extension.
+然后又报错了，提示信息如下。百度出来的解决方案是可以安装Xcode，简单粗暴。但是我不想这么解决。直接安装`xcode-select`经过漫长的等待，安装成功后，再执行一遍`sudo gem install jekyll`，jekyll总算是安装成功了。
+
+    ERROR:  Error installing jekyll:
+    ERROR: Failed to build gem native extension.
+
+    /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby extconf.rb
+
+[Problem installing jekyll](https://github.com/jekyll/jekyll-help/issues/167)
+[Compass cannot be installed unless we have Mac Xcode](https://teamtreehouse.com/community/compass-cannot-be-installed-unless-we-have-mac-xcode)
+
+#### cannot load such file -- rdiscount
+这个错误之前在windows中见过，就是没有rdiscount，安装一下就行了。`sudo gem install rdiscount`，稍等片刻，下载成功后，执行`jekyll serve`启动jekyll。
+这次大功告成了！😊
 
 
 [BeiYuu]:    http://beiyuu.com  "BeiYuu"
