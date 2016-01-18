@@ -115,8 +115,243 @@ JS是在浏览器中运行的，而NodeJS是在服务器中运行的，两者都
 - module.exports === exports
 - 不要修改exports的引用，例如`module.exports = [1,2]`，修改了exports指向数据就传递不过去了
 
+### process对象
+process 对象是一个全局对象，通过这个对象提供的属性和方法，可以让我们对当前运行的程序进行访问和控制。其中主要涉及以下几个属性和方法：
+
+- argv：一组包含命令行参数的数组
+- execPath：当前进程的绝对路径
+- env：返回用户环境信息
+- version：返回node版本信息
+- versions：返回node以及node依赖包版本信息
+- pid：当前进程的pid
+- title：当前进程的显示名称（Getter／Setter）
+- arch：返回当前CPU处理器架构arm/ia32/x64
+- platform：返回当前操作系统平台
+- cwd：返回当前进程的工作目录
+- chdir(directory)：改变当前进程的工作目录
+- memoryUsage()：返回node进程的内存使用情况，单位为byte
+- exit(code)：退出
+- kill(pid)：向进程发出信息
+- stdin：标准输入设备
+- stdout：标准输出设备
+
+** 示例1：process.argv **
+
+	/*
+	* 中文文档手册上的示例
+	* */
+	// 打印 process.argv
+	process.argv.forEach(function(val, index, array) {
+	    console.log(index + ': ' + val);
+	});
+
+	/*
+	* 官方文档手册上的示例
+	* */
+	// print process.argv
+	process.argv.forEach((val, index, array) => {
+	    console.log(`${index}: ${val}`);
+	});
+
+	/*
+	* 两者运行的结果一致
+	* */
+	//0: /usr/local/bin/node
+	//1: /Users/yuxiangliang/Documents/study/miaov/NodeJS/process/1.js
+
+NodeJS中文手册上使用的是ES6之前的demo，而官网给出的是ES6的demo。在ES6中，新支持了箭头函数。现在的Chrome已经支持了这种新特性。  
+官网给出的demo中，也使用到了ES6字符扩展的一个特性：模版字符串。模板字符串（template string）是增强版的字符串，用反引号（`）标识。它可以当作普通字符串使用，也可以用来定义多行字符串，或者在字符串中嵌入变量。
+
+** 实例2：stdin、stdout **
+	
+
+	// 标准输出流
+	//process.stdout.write("Hello NodeJS");
+	//process.stderr.write("haha");
+
+	// 实际上console.log 就是标准输出流
+	console.log = function(msg) {
+	    process.stdout.write('标准输出流:'+`${msg}\n`);
+	};
+	console.log('test');
+
+	// 官网API示例，监听readable
+	process.stdin.setEncoding('utf8');
+	process.stdin.on('readable', () => {
+	    var chunk = process.stdin.read();
+	    if (chunk !== null) {
+	        process.stdout.write(`输入了: ${chunk}`);
+	    }
+	});
+	process.stdin.on('end', () => {
+	    process.stdout.write('end');
+	});
+
+	// 其他示例，监听data
+	// 默认情况下输入流是关闭的,要监听处理输入流数据,首先要开启输入流
+	process.stdin.resume();
+	process.stdin.on("data", function(data){
+	    console.log("输入了:"+data);
+	});
+
+上面这两个demo的效果是一致的，都是等待用户输入，然后打印出输入内容。不同的是监听的事件不一样。
 
 
+## Buffer类
+通过Buffer类可以更好的操作二进制数据。在操作文件、网络数据的时候，其实操作的就是二进制数据流。Node提供的Buffer类，就是为了更方便的操作数据流。Buffer是一个全局的类。
+
+
+
+** 构造 ** 
+
+	var bf = new Buffer(5);
+	console.log(bf);
+
+	bf[6] = 'aa';
+	console.log(bf);// 一旦buffer长度固定,不会再改变
+
+	var bf2 = new Buffer([1,2,3]);
+	console.log(bf2);
+
+	// 默认的编码是utf-8
+	var bf3 = new Buffer('中国','utf-8');
+	console.log(bf3);
+
+	for(var i=0; i<bf3.length; i++){
+	    //console.log(bf3[i].toString(16));
+	    console.log(String.fromCharCode(bf3[i]));
+	}
+
+	//Buffer对象的length长度是字节长度,而不是字符串长度.
+	//一个中文是三个字节
+
+	var str1 = "test";
+	var buf1 = new Buffer("test");
+	console.log(str1.length);
+	console.log(buf1.length);
+
+	var str2 = "中国";
+	var buf2 = new Buffer("中国");
+	console.log(str2.length); // 字符个数
+	console.log(buf2.length); // 字节长度,一个汉字三个字节
+
+需要注意的是buf.length，指的是字节长度，一个汉字是三个字节。
+
+** buf.write **
+
+	const buf = new Buffer(256);
+	const len = buf.write('\u00bd + \u00bc = \u00be', 0);
+	console.log(`${len} bytes: ${buf.toString('utf8', 0, len)}`);
+	//12 bytes: ½ + ¼ = ¾
+
+	var str = 'test';
+	var bf = new Buffer(4);
+	bf.write(str);  // 向buffer中写入字符串
+	console.log(bf);
+
+	var str2 = 'test';
+	var bf2 = new Buffer(4);
+	var length = bf2.write(str2, 1, 2); // offset参数为写入到buff中的下标
+	// 这里的bufer对象长度是4,实际上只写入了2个字节
+	// 剩下的两个字节,随机生成
+	console.log(bf2);
+	console.log(length);//写入字节的个数
+
+官网给出的demo里头用到了ES6的另一个新增特性：const。const也用来声明变量，但是声明的是常量。一旦声明，常量的值就不能改变。  
+另外需要注意的是buf.write中的offset参数，是相对于buffer而言，并不是相对于str。
+
+** buf.toString **
+	
+	var bf = new Buffer('中国');
+	console.log(bf.toString());
+	console.log(bf.toString('utf-8', 1));//��国
+	// 出现乱码,因为"中"应该是3个字节,如果从第一位开始,那么剩下的两个字节就会乱码
+
+	console.log(bf.toJSON());
+	//{ type: 'Buffer', data: [ 228, 184, 173, 229, 155, 189 ] }
+
+如上例所示，buf.toString中的start参数，指的字节开始位数。  
+如果buffer对象和字符串通过`+`相连，会自动调用buf.toString。
+
+** buf.slice和buf.copy **
+
+	const buf1 = new Buffer(26);
+
+	for (var i = 0 ; i < 26 ; i++) {
+	    buf1[i] = i + 97; // 97 is ASCII a
+	}
+
+	const buf2 = buf1.slice(0, 3);
+	buf2.toString('ascii', 0, buf2.length);
+	// Returns: 'abc'
+	buf1[0] = 33;   //修改了buf1
+	buf2.toString('ascii', 0, buf2.length); // buf2也被修改了
+	// Returns : '!bc'
+
+	//Note that modifying the new Buffer slice will modify the memory
+	//in the original Buffer because the allocated memory of the two objects overlap.
+
+	//slice截取的buffer引用的是和之前的buffer同一个内存地址,
+	//如果修改了其中一个,另外一个也会被修改
+	//这点和数组的slice是有区别的
+
+
+	const buf1 = new Buffer(26);
+	const buf2 = new Buffer(26).fill('!');  // buf2全是!
+
+	for (var i = 0 ; i < 26 ; i++) {    // buf1是26个英文字母
+	    buf1[i] = i + 97; // 97 is ASCII a
+	}
+	//参数:(targetBuffer[, targetStart][, sourceStart][, sourceEnd])
+	buf1.copy(buf2, 8, 16, 20);
+	console.log(buf2.toString('ascii', 0, 25));
+	// Prints: !!!!!!!!qrst!!!!!!!!!!!!!
+
+	buf2[0] = "97"; // 修改buf2
+	console.log(buf2.toString());
+	console.log(buf1.toString()); // buf1并没有修改
+
+** bufer类方法 **
+	
+
+	// 判断Buffer是否支持某个编码
+	console.log(Buffer.isEncoding('utf-8')); // 支持utf-8
+	console.log(Buffer.isEncoding('gbk'));  // 不支持gbk
+
+	// 判断是否为Buffer对象
+	const arr = [1,2,3];
+	const bf = new Buffer(10);
+	console.log(Buffer.isBuffer(arr));
+	console.log(Buffer.isBuffer((bf)));
+
+	// 返回Buffer对象的字节长度
+	//Returns the actual byte length of a string.
+	// If not specified, encoding defaults to 'utf8'.
+	// This is not the same as String.prototype.length since that returns
+	// the number of characters in a string.
+	var str1 = "test";
+	var str2 = "中国";
+	console.log(Buffer.byteLength(str1)); // 4
+	console.log(Buffer.byteLength(str2)); // 6
+	// 不同的编码返回的字节长度不一样,默认编码是utf-8
+	console.log(Buffer.byteLength(str2, 'ascii')); // 2
+
+	// 将Buffer数组拼接成新的Buffer对象
+	const buf1 = new Buffer(10).fill(0);
+	const buf2 = new Buffer(14).fill(0);
+	const buf3 = new Buffer(18).fill(0);
+	const totalLength = buf1.length + buf2.length + buf3.length;
+
+	console.log(totalLength);
+	// totalLength可以不指定,程序内部会循环计算Buffer的长度
+	// 但是这样会降低性能,所以最好指定
+	const bufA = Buffer.concat([buf1, buf2, buf3], totalLength);
+	console.log(bufA);
+	console.log(bufA.length);
+
+	// 42
+	// <Buffer 00 00 00 00 ...>
+	// 42
 
 
 
