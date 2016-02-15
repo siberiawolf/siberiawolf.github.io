@@ -1,0 +1,205 @@
+@page {
+	size: A4 portrait;
+	margin: 2.1cm 1.9cm;
+}
+
+
+body {
+	margin: 0;
+	background: #fff;
+	color: #000;
+	font-family: 'Pingfang SC', 'Lantinghei SC', 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 12px;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: none;
+	-webkit-print-color-adjust: exact;
+}
+h1, h2, h3, h4, h5, h6, p, ul, ol { margin: 0; padding: 0; }
+h1, h2, h3, h4, h5, h6 { font-weight: normal; font-size: inherit; }
+ul, ol { list-style-type: none; }
+p, ul, ol {
+	text-align: justify;
+	text-justify: inter-ideograph;
+	line-height: 1.7;
+}
+img { border: none; vertical-align: top; }
+a, a:visited { text-decoration: none; color: #000; }
+a:hover { text-decoration: underline; }
+
+
+/* 清浮动 */
+.clear { clear: both; height: 0; overflow: hidden; }
+.clearfix:after {
+	display: block;
+	overflow: hidden;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+	content: '.';
+}
+
+/* 内容边界 */
+.boundary { margin: 0 10px; clear: both; }
+
+/* 通用列表样式 */
+.list > li { list-style: disc; margin-left: 1.3em; }
+
+/* 控制某些内容在打印时的显示隐藏 */
+.only-for-print { display: block; }
+.not-for-print { display: none; }
+
+
+/* 页头 */
+.header { border-bottom: 1px solid #d6d6d6; line-height: 1; padding-bottom: 15px; }
+.header__logo { line-height: 40px; height: 40px; }
+.header__logo__fullname { font-size: 2.8em; font-family: 'PingHei', 'STHeiti SC', 'SimHei'; }
+.header__logo__jobtitle { font-size: 1.5em; color: #888; padding-left: 10px; }
+.header__address { font-style: normal; line-height: 21px; font-size: 0.875em; }
+.header__address__item {
+	padding-left: 24px;
+	background: url(../images/icon-sprites.png) no-repeat;
+	background-size: 20px auto;
+	margin-top: 8px;
+	height: 20px;
+	line-height: 20px;
+	float: left; margin-right: 22px;
+}
+.header__address__item:last-child { margin-right: 0; }
+.header__address__item-phone { background-position: 0 0; }
+.header__address__item-qq { background-position: 0 -28px; }
+.header__address__item-email { background-position: left bottom; }
+.header__address__item-blog { background: none; padding-left: 0; float: right; }
+.header__address__item-blog a { font-size: 0.86em; }
+.header__address__item-blog a:after { content: '「' attr(href) '」'; }
+
+
+/* 章节 */
+.section .boundary { padding: 20px 0; }
+.section__header { text-shadow: 1px 1px 0 #fff; line-height: 1.4; margin-bottom: 20px; }
+.section__header__title, .section__header__subtitle {
+	display: inline-block;
+	font-family: 'Microsoft JhengHei', 'Microsoft YaHei', 'STHeiti SC', 'SimHei';
+	text-align: center;
+}
+.section__header__title { font-size: 2em; }
+.section__header__subtitle { margin-left: 0.4em; font-size: 1.6em; color: #999; }
+
+
+/* 技术技能章节 */
+.tech-skill-list__item { position: relative; margin-bottom: 15px; }
+.tech-skill-list__item-html-and-css { width: 90%; }
+.tech-skill-list__item-nodejs { width: 75%; }
+.tech-skill-list__item-aspdotnet { width: 60%; }
+.tech-skill-list__item-sql { width: 55%; }
+.tech-skill-list__item-photoshop { width: 50%; }
+.tech-skill-list__item__name {
+	height: 34px;
+	line-height: 34px;
+	padding-left: 10px;
+	overflow: hidden;
+	border-left: 3px solid;
+	color: #ff742a;
+	background-color: #fff6dd;
+	border-color: #fdbc40;
+}
+.tech-skill-list__item--practised .tech-skill-list__item__name {
+	color: #6e9c0f;
+	background-color: #eaf6d0;
+	border-color: #80bd01;
+}
+.tech-skill-list__item--mastered .tech-skill-list__item__name {
+	color: #2a7da9;
+	background-color: #d6efff;
+	border-color: #3498db;
+}	
+.tech-skill-list__item__detail { display: none; }
+
+
+/* 教育经历 */
+@media (max-width: 959px) {
+	.edu { margin-top: 20px; padding-bottom: 10px; border-bottom: 2px dashed #ccc; }
+	.edu-university { border-bottom: none; padding-bottom: 0; }
+	.edu__logo { width: 110px; margin-left: 20px; float: right; }
+}
+
+
+/* 工作经验章节 */
+.work-exp-list { border-left: 4px solid #ccc; padding: 1px 0; margin-left: 8px; }
+.work-exp-list__point {
+	position: relative;
+	padding-left: 15px;
+	margin: 15px 0;
+	height: 26px;
+	line-height: 26px;
+}
+.work-exp-list__point__ico {
+	width: 18px;
+	height: 18px;
+	border: 3px solid #fff;
+	border-radius: 12px;
+	background: #3498db;
+	position: absolute;
+	left: -14px;
+	top: 0;
+}
+.work-exp-list__company { margin: 15px 0 15px 20px; }
+.work-exp-list__company__header { position: relative; padding-left: 115px; line-height: 1; }
+.work-exp-list__company__header__logo {
+	width: 100px;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.work-exp-list__company__header__logo img { width: 100%; }
+.work-exp-list__company__header__title,
+.work-exp-list__company__header__jobtitle { display: inline-block; }
+.work-exp-list__company__header__title { font-size: 1.2em; font-weight: bold; }
+.work-exp-list__company__header__jobtitle { color: #888; }
+.work-exp-list__company__header__jobtitle:before {
+	content: '\2014\2014';
+	padding-right: 4px;
+}
+.work-exp-list__company__body { margin-top: 3px; padding-left: 115px; }
+
+
+/* 项目经验章节 */
+.project { margin-bottom: 25px; padding: 0 5px 15px 5px; border-bottom: 2px dashed #ccc; }
+.project:last-child { border-bottom: none; margin-bottom: 0; }
+.project__intro__header { margin-bottom: 6px; }
+.project__intro__header__title, .project__intro__header__period { float: left; }
+.project__intro__header__title { font-size: 1.2em; font-weight: bold; }
+.tech-tag-list { float: right; }
+.tech-tag-list__item {
+	padding: 2px 5px;
+	border-radius: 3px;
+	display: inline-block;
+	vertical-align: middle;
+	color: #fff;
+	font-size: 0.75em;
+	font-family: 'Lucida Grande', arial;
+}
+.tech-tag-list__item-javascript { background: #f0db4f; color: #333 !important; }
+.tech-tag-list__item-nodejs { background: #80bd01; }
+.tech-tag-list__item-html { background: #f60; }
+.tech-tag-list__item-css { background: #f90; }
+.tech-tag-list__item-aspdotnet { background: #68217a; }
+.tech-tag-list__item-sqlite { background: #003b57; }
+.tech-tag-list__item-mysql { background: #015a84; }
+.project__intro__header__period { margin-left: 4px; font-size: 0.75em; color: #888; }
+.project__intro__header__period:before { content: '（'; }
+.project__intro__header__period:after { content: '）'; }
+.project__intro__links { margin-top: 8px; text-align: right; word-spacing: 1em; }
+.project__intro__links a:after { content: '「' attr(href) '」'; }
+.project__thumb { display: none; }
+
+
+/* 页脚 */
+.footer { border-top: 1px solid #e8e8e8; color: #888; font-size: 0.875em; }
+.footer .boundary { padding-top: 15px; }
+.footer__qrcode { float: left; }
+.footer__qrcode__img { width: 60px; height: 60px; float: left; }
+.footer__qrcode__text { margin: 7px 0 0 10px; float: left; }
+.footer__copyright { margin-top: 7px; float: right; text-align: right;  }
+.footer__copyright p { text-align: left; }
+.footer__copyright__comment { font-size: 0.86em; }
