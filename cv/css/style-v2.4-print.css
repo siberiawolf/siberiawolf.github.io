@@ -87,11 +87,11 @@ a:hover { text-decoration: underline; }
 
 /* 技术技能章节 */
 .tech-skill-list__item { position: relative; margin-bottom: 15px; }
-.tech-skill-list__item-html-and-css { width: 90%; }
-.tech-skill-list__item-nodejs { width: 75%; }
-.tech-skill-list__item-aspdotnet { width: 60%; }
-.tech-skill-list__item-sql { width: 55%; }
-.tech-skill-list__item-photoshop { width: 50%; }
+.tech-skill-list__item-javascript { width: 75%; }
+.tech-skill-list__item-html-and-css { width: 60%; }
+.tech-skill-list__item-photoshop { width: 40%; }
+.tech-skill-list__item-java { width: 45%; }
+
 .tech-skill-list__item__name {
 	height: 34px;
 	line-height: 34px;
@@ -183,9 +183,11 @@ a:hover { text-decoration: underline; }
 .tech-tag-list__item-nodejs { background: #80bd01; }
 .tech-tag-list__item-html { background: #f60; }
 .tech-tag-list__item-css { background: #f90; }
-.tech-tag-list__item-aspdotnet { background: #68217a; }
-.tech-tag-list__item-sqlite { background: #003b57; }
-.tech-tag-list__item-mysql { background: #015a84; }
+.tech-tag-list__item-weixin { background: #68217a; }
+.tech-tag-list__item-grunt { background: #015a84; }
+.tech-tag-list__item-bootstrap { background: #828084; }
+.tech-tag-list__item-githubpages { background: #842a15; }
+
 .project__intro__header__period { margin-left: 4px; font-size: 0.75em; color: #888; }
 .project__intro__header__period:before { content: '（'; }
 .project__intro__header__period:after { content: '）'; }

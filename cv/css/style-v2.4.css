@@ -162,29 +162,30 @@ a.button { display: inline-block; }
 	animation-duration: 1.5s;
 }
 .tech-skill-list__item-javascript {
+	width: 75%;
 	-webkit-animation-name: bar-javascript;
 	animation-name: bar-javascript;
 }
 @-webkit-keyframes bar-javascript {
 	0% { width: 0; }
-	100% { width: 100%; }
+	100% { width: 75%; }
 }
 @keyframes bar-javascript {
 	0% { width: 0; }
-	100% { width: 100%; }
+	100% { width: 75%; }
 }
 .tech-skill-list__item-html-and-css {
-	width: 90%;
+	width: 60%;
 	-webkit-animation-name: bar-html-and-css;
 	animation-name: bar-html-and-css;
 }
 @-webkit-keyframes bar-html-and-css {
 	0% { width: 0; }
-	100% { width: 90%; }
+	100% { width: 60%; }
 }
 @keyframes bar-html-and-css {
 	0% { width: 0; }
-	100% { width: 90%; }
+	100% { width: 60%; }
 }
 .tech-skill-list__item-nodejs {
 	width: 75%;
@@ -199,44 +200,31 @@ a.button { display: inline-block; }
 	0% { width: 0; }
 	100% { width: 75%; }
 }
-.tech-skill-list__item-aspdotnet {
-	width: 60%;
-	-webkit-animation-name: bar-aspdotnet;
-	animation-name: bar-aspdotnet;
-}
-@-webkit-keyframes bar-aspdotnet {
-	0% { width: 0; }
-	100% { width: 60%; }
-}
-@keyframes bar-aspdotnet {
-	0% { width: 0; }
-	100% { width: 60%; }
-}
-.tech-skill-list__item-sql {
-	width: 55%;
-	-webkit-animation-name: bar-sql;
-	animation-name: bar-sql;
-}
-@-webkit-keyframes bar-sql {
-	0% { width: 0; }
-	100% { width: 55%; }
-}
-@keyframes bar-sql {
-	0% { width: 0; }
-	100% { width: 55%; }
-}
 .tech-skill-list__item-photoshop {
-	width: 50%;
+	width: 40%;
 	-webkit-animation-name: bar-photoshop;
 	animation-name: bar-photoshop;
 }
 @-webkit-keyframes bar-photoshop {
 	0% { width: 0; }
-	100% { width: 50%; }
+	100% { width: 40%; }
 }
 @keyframes bar-photoshop {
 	0% { width: 0; }
-	100% { width: 50%; }
+	100% { width: 40%; }
+}
+.tech-skill-list__item-java {
+	width: 45%;
+	-webkit-animation-name: bar-java;
+	animation-name: bar-java;
+}
+@-webkit-keyframes bar-java {
+	0% { width: 0; }
+	100% { width: 45%; }
+}
+@keyframes bar-java {
+	0% { width: 0; }
+	100% { width: 45%; }
 }
 .tech-skill-list__item__name {
 	height: 40px;
@@ -310,8 +298,8 @@ a.button { display: inline-block; }
 
 @media (min-width: 960px) {
 	.edu { width: 50%; float: left; box-sizing: border-box; }
-	.edu-seniorschool { padding-right: 4%; border-right: 2px dashed #ccc; }
-	.edu-university { padding-left: 4%; }
+	.edu-seniorschool { padding-right: 4%; }
+	.edu-university { padding-left: 4%; border-left: 2px dashed #ccc; }
 	.edu-seniorschool .edu__body { padding-right: 180px; }
 	.edu-university .edu__body { padding-left: 180px; }
 	.edu__logo { width: 150px; }
@@ -387,6 +375,9 @@ a.button { display: inline-block; }
 .tech-tag-list__item-css { background: #f90; }
 .tech-tag-list__item-weixin { background: #68217a; }
 .tech-tag-list__item-grunt { background: #015a84; }
+.tech-tag-list__item-bootstrap { background: #828084; }
+.tech-tag-list__item-githubpages { background: #842a15; }
+
 .project__intro__header__period {
 	position: absolute;
 	right: 0;
