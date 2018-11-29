@@ -264,13 +264,13 @@ pre ol {
 	background-position:50% 50%;
 }
 .blog .aside {
-	background-image:url(http://siberiawolf.qiniudn.com/images%2Findex%2Feiffeltower.jpg);
+	background-image:url(/images/index/eiffeltower.jpg);
 }
 .opinion .aside {
-	background-image:url(http://siberiawolf.qiniudn.com/images%2Findex%2Fgradually.jpg);
+	background-image:url(/images/index/gradually.jpg);
 }
 .project .aside {
-	background-image:url(http://siberiawolf.qiniudn.com/images%2Findex%2Fsmoke.jpg)
+	background-image:url(/images/index/smoke.jpg)
 }
 .index-content .section {
 	margin-left:30%;
