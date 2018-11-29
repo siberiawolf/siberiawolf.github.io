@@ -1,5 +1,4 @@
 
-markdown: rdiscount
 highlighter: rouge
 
 permalink: /:title
