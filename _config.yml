@@ -1,4 +1,5 @@
 
+markdown: redcarpet
 highlighter: rouge
 
 permalink: /:title
